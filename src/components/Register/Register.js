@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 // work on error validation on input form
 export default class Register extends Component {
