@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class AddForm extends Component {
+export default class EntryForm extends Component {
   render() {
     return(
       <div>
@@ -15,7 +15,7 @@ export default class AddForm extends Component {
         </div>
         <div className="form-section">
         <label htmlFor="mood-summary">Why am I feeling this way?</label>
-        <textarea name="mood-summary" rows="15"   required></textarea>
+        <textarea name="mood-summary" rows="15" columns="20" placeholder="Type your entry..." required></textarea>
         </div>
         <div className="time-mood-container" className="form-section">
         <label htmlFor="time-mood">How long did the mood last?</label>

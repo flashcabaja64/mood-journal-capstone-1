@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../src/components/Utils/PrivateRoute';
 import PublicOnlyRoute from '../src/components/Utils/PublicOnlyRoute';
-import AddForm from './components/AddForm/AddForm';
+import AddForm from './components/EntryForm/EntryForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import MoodCollection from './components/MoodCollection/MoodCollection';
 import NavBar from './components/NavBar/NavBar';
