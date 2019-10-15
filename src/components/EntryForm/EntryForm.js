@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EntryApiService from '../../services/entry-api-service';
 
 export default class EntryForm extends Component {
   render() {

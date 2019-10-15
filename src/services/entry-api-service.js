@@ -1,8 +1,6 @@
 import config from '../config';
 import TokenService from '../services/token-service';
 
-
-//Need to finish other endpoints
 const EntryApiService = {
   getEntries() {
     return fetch(`${config.API_ENDPOINT}/entries`, {

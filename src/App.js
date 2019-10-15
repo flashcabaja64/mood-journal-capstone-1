@@ -3,11 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../src/components/Utils/PrivateRoute';
 import PublicOnlyRoute from '../src/components/Utils/PublicOnlyRoute';
 import AddForm from './components/EntryForm/EntryForm';
-import LoginForm from './components/LoginForm/LoginForm';
-import MoodCollection from './components/MoodCollection/MoodCollection';
+import LoginPage from './pages/LoginPage/LoginPage';
+import MoodPage from './pages/MoodPage/MoodPage';
 import NavBar from './components/NavBar/NavBar';
 import Register from './components/Register/Register';
 
+//reroute pages to components in the PAGES folder
 class App extends Component {
 
   constructor() {
@@ -22,7 +23,6 @@ class App extends Component {
   }
 
   state = { hasError: false }
-
 
   render() {
     return (
@@ -40,7 +40,11 @@ class App extends Component {
           />
           <PublicOnlyRoute
             path={'/login'}
-            component={LoginForm}
+            component={LoginPage}
+          />
+          <PrivateRoute
+            path={'/entries/:entry_id'}
+            component={MoodPage}
           />
         </Switch>
       </main>

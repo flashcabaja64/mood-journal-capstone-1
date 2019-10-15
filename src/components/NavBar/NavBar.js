@@ -7,7 +7,7 @@ export default class NavBar extends Component {
       <nav className='nav'>
         <ul>
           <li>
-            <NavLink to='/home'>
+            <NavLink to='/'>
               Home
             </NavLink>
           </li>
