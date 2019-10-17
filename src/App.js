@@ -1,52 +1,63 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+//import config from './config';
 import PrivateRoute from '../src/components/Utils/PrivateRoute';
 import PublicOnlyRoute from '../src/components/Utils/PublicOnlyRoute';
-import AddForm from './components/EntryForm/EntryForm';
+import EntryForm from './components/EntryForm/EntryForm';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MoodPage from './pages/MoodPage/MoodPage';
 import NavBar from './components/NavBar/NavBar';
-import Register from './components/Register/Register';
+import LandingPage from './components/LandingPage/LandingPage'
+import MoodListItem from './components/MoodListItem/MoodListItem'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 //reroute pages to components in the PAGES folder
 class App extends Component {
 
-  constructor() {
-    super()
-  }
+  state = {
+    error: null,
+    hasError: false,
+  };
 
-  static defaultProps = {
-    location: {},
-    history: {
-      push: () => {},
-    },
-  }
-
-  state = { hasError: false }
+  //state = { hasError: false }
 
   render() {
     return (
       <main className='App'>
-        {this.state.hasError && <p className='error'>There was an error.</p>}
-        <Switch>
-          <Route
-            exact
-            path={'/'}
-            component={MoodCollection}
+        {/* {this.state.error && <p className='error'>There was an error.</p>} */}
+
+          <NavBar />
+          <Switch>
+            <Route
+              exact
+              path='/'
+              component={LandingPage}
             />
-          <PublicOnlyRoute
-            path={'/register'}
-            component={Register}
-          />
-          <PublicOnlyRoute
-            path={'/login'}
-            component={LoginPage}
-          />
-          <PrivateRoute
-            path={'/entries/:entry_id'}
-            component={MoodPage}
-          />
-        </Switch>
+            <Route
+              path={'/moods'}
+              component={MoodPage}
+            />
+            <PublicOnlyRoute
+              path={'/register'}
+              component={RegisterPage}
+            />
+            <PublicOnlyRoute
+              path={'/login'}
+              component={LoginPage}
+            />
+            <PublicOnlyRoute
+              path={'/newmoods'}
+              component={EntryForm}
+            />
+            <PrivateRoute
+              path={'/entries/:entry_id'}
+              component={MoodPage}
+            />
+            <Route 
+              component={NotFoundPage}
+            />
+          </Switch>
       </main>
     );
   }

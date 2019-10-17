@@ -29,7 +29,7 @@ const EntryApiService = {
   },
 
   getEntryComments(entryId) {
-    return fetch(`${config.API_ENDPOINT}/entries/${entryId}/reviews`, {
+    return fetch(`${config.API_ENDPOINT}/entries/${entryId}/comments`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
@@ -39,6 +39,27 @@ const EntryApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
         )
+  },
+//EDIT THIS (MAY NOT BE RIGHT!!!!)
+  postEntry(entryId, title, content, duration, mood_type) {
+    return fetch(`${config.API_ENDPOINT}/entries`, {
+      method: 'POST',
+      headers: {
+        'content-type' : 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({
+        title,
+        content,
+        duration,
+        mood_type
+      })
+    })
+    .then(res =>
+      (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json()
+    )
   },
 
   postComment(entryId, text, rating) {
