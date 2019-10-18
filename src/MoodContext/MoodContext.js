@@ -37,6 +37,13 @@ export class MoodPageProvider extends Component {
     ])
   }
 
+  deleteEntryPage = entryId => {
+    let filterEntries = this.state.entries.filter(
+      entry => entry.id !== entryId
+    );
+    this.setState({ entries: filterEntries})
+  }
+
   render() {
     const value = {
       entries: this.state.entries,
@@ -45,6 +52,7 @@ export class MoodPageProvider extends Component {
       clearError: this.clearError,
       setEntryList: this.setEntryList,
       addEntry: this.addEntry,
+      deleteEntryPage: this.deleteEntryPage
     }
     return (
       <MoodContext.Provider value={value}>

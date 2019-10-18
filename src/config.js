@@ -1,4 +1,5 @@
 export default {
   API_ENDPOINT: 'http://localhost:8000/api',
   TOKEN_KEY: 'mood-journal-client-auth-token',
+  USER_ID: 'mood-journal-user-id',
 }

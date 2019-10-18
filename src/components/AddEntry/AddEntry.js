@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import EntryApiService from '../../services/entry-api-service';
 import MoodContext from '../../MoodContext/MoodContext';
-//import config from '../../config'
+import TokenService from '../../services/token-service';
 
 export default class AddEntry extends Component {
 	static contextType = MoodContext;
 
+	state = {
+		title: '',
+		content: '',
+		duration: '',
+		mood_type: '',
+	}
+
 	handleAddMood = e => {
 		e.preventDefault();
 		const { title, content, duration, mood_type } = e.target
-		const { entries } = this.context
 
 		EntryApiService.postEntry(
-			entries.id,
+			TokenService.getUserId(),
 			title.value,
 			content.value,
 			Number(duration.value),

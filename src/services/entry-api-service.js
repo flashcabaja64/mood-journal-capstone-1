@@ -41,7 +41,8 @@ const EntryApiService = {
         )
   },
 //EDIT THIS (MAY NOT BE RIGHT!!!!)
-  postEntry(userId, title, content, duration, mood_type) {
+  postEntry(user_id, title, content, duration, mood_type) {
+    console.log(user_id)
     return fetch(`${config.API_ENDPOINT}/entries`, {
       method: 'POST',
       headers: {
@@ -49,7 +50,7 @@ const EntryApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        user_id: userId,
+        user_id,
         title,
         content,
         duration,
@@ -83,7 +84,37 @@ const EntryApiService = {
         )
   },
 
+  
+  //ADD PATCH METHOD
+  patchEntry(entryId, title, content, duration, mood_type) {
+    return fetch(`${config.API_ENDPOINT}/${entryId}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      }
+    })
+  },
+
   //ADD DELETE METHOD
+  deleteEntry(entryId) {
+    fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+    .then(res => {
+      if (!res.ok) {
+        return res.json().then(e => Promise.reject(e));
+      }
+      return res.json();
+    })
+    .catch(error => {
+      console.error({ error });
+    });
+  },
 }
 
 export default EntryApiService;

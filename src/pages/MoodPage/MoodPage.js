@@ -22,7 +22,7 @@ export default class MoodPage extends Component {
         id={entry.id}
         entry={entry}
       />
-      )
+    )
   }
 
   render() {

@@ -11,13 +11,17 @@ const AuthApiService = {
       body: JSON.stringify(credentials),
     })
       .then(res => {
-        (!res.ok)
-        ? res.json().then(e => Promise.reject(e))
-        : res.json()
+        if (!res.ok) {
+          return Promise.reject('wrong')
+        }
+          return res.json()
+        // (!res.ok)
+        //   ? res.json().then(e => Promise.reject(e))
+        //   : res.json()
       })
       .then(res => {
-        TokenService.saveAuthToken(res.authToken, res.user_name);
-        return res
+        TokenService.saveAuthToken(res.authToken);
+        TokenService.saveUserId(res.user.user_id);
       })
   },
 
@@ -31,9 +35,13 @@ const AuthApiService = {
       body: JSON.stringify(user)
     })
     .then(res => {
-      (!res.ok)
-        ? res.json().then(e => Promise.reject(e))
-        : res.json()
+      if (!res.ok) {
+        return Promise.reject('wrong')
+      }
+        return res.json()
+      // (!res.ok)
+      //   ? res.json().then(e => Promise.reject(e))
+      //   : res.json()
     })
   },
 }

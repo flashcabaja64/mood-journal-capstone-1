@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import config from '../../config'
+//import { Link } from 'react-router-dom';
+//import config from '../../config'
+import MoodContext from '../../MoodContext/MoodContext';
+import EntryApiService from '../../services/entry-api-service';
 
 export default class MoodListItem extends Component {
 
+	static contextType = MoodContext
+
+	//work on this later
 	handleDeleteClick = e => {
 		e.preventDefault()
 		const entryId = this.props.id;
+		const {deleteEntryPage} = this.context;
 
-		fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
-			method: 'DELETE',
-			headers: {
-				'content-type': 'application/json'
-			},
-		})
-			.then(res => {
-				if (!res.ok) {
-					return res.json().then(e => Promise.reject(e))
-				}
-				return res.json()
-			})
+		EntryApiService.deleteEntry(entryId)
 			.then(() => {
-				
+				deleteEntryPage(entryId)
+				this.props.history.push(`/moods`)
 			})
+			.catch(err => {
+				console.error(err)
+			})
+	}
+
+	handleEditClick = e => {
+		e.preventDefault();
 	}
 
 	render() {
@@ -35,6 +38,13 @@ export default class MoodListItem extends Component {
 						<p>Mood Type: {entry.mood_type}</p>
 						<button
 							type='button'
+							//onClick={}
+							>
+							Edit
+						</button>
+						<button
+							type='button'
+							onClick={this.handleDeleteClick}
 						>
 						Delete							
 						</button>

@@ -32,7 +32,7 @@ export default class Register extends Component {
       })
   }
   render() {
-    const { error } = this.state;
+    //const { error } = this.state;
     return (
     <section>
     <header>
