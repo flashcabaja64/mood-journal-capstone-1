@@ -8,16 +8,34 @@ export default class NavBar extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
   }
+  
+  renderUserName = () => {
+    if(TokenService.getAuthToken()) {
+      return <h3 className='username'>{TokenService.getAuthToken()}</h3>
+    } else {
+      return <h3 className='username'>Guest</h3>
+    }
+  }
 
   renderLogoutLink() {
     return (
       <div className="log-in">
+        {this.renderUserName}
         <Link
           onClick={this.handleLogoutClick}
-          to='/'
-        >
+          to='/'>
           Logout
         </Link>
+        <li>
+          <NavLink to='/moods'>
+            My Moods
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/newmoods'>
+            New Mood
+          </NavLink>
+        </li>
       </div>
     )
   }
@@ -26,9 +44,8 @@ export default class NavBar extends Component {
     return (
       <div className="log-out">
         <Link
-          to="/register"
-        >
-        Register
+          to="/register">
+          Register
         </Link>
         <Link
           to='/login'>
@@ -47,7 +64,7 @@ export default class NavBar extends Component {
               Home
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to='/moods'>
               My Moods
             </NavLink>
@@ -56,8 +73,8 @@ export default class NavBar extends Component {
             <NavLink to='/newmoods'>
               New Mood
             </NavLink>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <NavLink to='/login'>
               Log-in
             </NavLink>
@@ -66,6 +83,11 @@ export default class NavBar extends Component {
             <NavLink to='/register'>
               Register
             </NavLink>
+          </li> */}
+          <li>
+          {TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()}
           </li>
         </ul>
       </nav>

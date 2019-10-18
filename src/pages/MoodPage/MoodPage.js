@@ -19,6 +19,7 @@ export default class MoodPage extends Component {
     return entries.map(entry =>
       <MoodListItem
         key={entry.id}
+        id={entry.id}
         entry={entry}
       />
       )

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 //import config from './config';
 import PrivateRoute from '../src/components/Utils/PrivateRoute';
 import PublicOnlyRoute from '../src/components/Utils/PublicOnlyRoute';
-import EntryForm from './components/EntryForm/EntryForm';
+import EntryForm from './components/AddEntry/AddEntry';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MoodPage from './pages/MoodPage/MoodPage';
 import NavBar from './components/NavBar/NavBar';
@@ -11,6 +11,7 @@ import LandingPage from './components/LandingPage/LandingPage'
 import MoodListItem from './components/MoodListItem/MoodListItem'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
+import AddEntry from './components/AddEntry/AddEntry';
 
 //reroute pages to components in the PAGES folder
 class App extends Component {
@@ -48,7 +49,7 @@ class App extends Component {
             />
             <PublicOnlyRoute
               path={'/newmoods'}
-              component={EntryForm}
+              component={AddEntry}
             />
             <PrivateRoute
               path={'/entries/:entry_id'}

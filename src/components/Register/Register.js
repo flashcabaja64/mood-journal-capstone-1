@@ -20,7 +20,7 @@ export default class Register extends Component {
       nickname: nickname.value,
       password: password.value,
     })
-      .then(user => {
+      .then(() => {
         full_name.value = ''
         user_name.value = ''
         password.value = ''
@@ -43,12 +43,12 @@ export default class Register extends Component {
       onSubmit={this.handleSubmit}
     >
       <div className="full_name">
-        <label htmlFor="full-name">Full Name</label>
+        <label htmlFor="full_name">Full Name</label>
         <input
           placeholder='Full Name'
           type="text"
           name='full_name'
-          id='full-name'
+          id='full_name'
           required
         />
       </div>

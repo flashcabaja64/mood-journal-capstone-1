@@ -41,7 +41,7 @@ const EntryApiService = {
         )
   },
 //EDIT THIS (MAY NOT BE RIGHT!!!!)
-  postEntry(entryId, title, content, duration, mood_type) {
+  postEntry(userId, title, content, duration, mood_type) {
     return fetch(`${config.API_ENDPOINT}/entries`, {
       method: 'POST',
       headers: {
@@ -49,6 +49,7 @@ const EntryApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
+        user_id: userId,
         title,
         content,
         duration,
@@ -81,6 +82,8 @@ const EntryApiService = {
           : res.json()
         )
   },
+
+  //ADD DELETE METHOD
 }
 
 export default EntryApiService;
