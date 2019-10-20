@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EntryApiService from '../../services/entry-api-service';
 import MoodContext from '../../MoodContext/MoodContext';
 import TokenService from '../../services/token-service';
+import './AddEntry.css';
 
 export default class AddEntry extends Component {
 	static contextType = MoodContext;
@@ -41,7 +42,7 @@ export default class AddEntry extends Component {
 
 render() {
 	return(
-		<div>
+		<div className="new-mood">
 		<header>
 	<h1>New Mood</h1>
 	</header>
@@ -54,6 +55,7 @@ render() {
 			name="title"
 			placeholder="Feeling weird"
 			onChange={this.onChangeHandle}
+			required
 		/>
 		</div>
 		<div className="form-section">
@@ -64,6 +66,7 @@ render() {
 			columns="30"
 			placeholder="Type your entry..."
 			onChange={this.onChangeHandle}
+			required
 		>
 		</textarea>
 		</div>
@@ -74,6 +77,7 @@ render() {
 			name="duration"
 			placeholder="0"
 			onChange={this.onChangeHandle}
+			required
 		/>
 		</div>
 		<div className="form-section">

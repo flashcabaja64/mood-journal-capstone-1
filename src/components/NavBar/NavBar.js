@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import TokenService from '../../services/token-service'
+import NavContext from '../../MoodContext/NavContext'
 //import MoodPage from '../../pages/MoodPage/MoodPage'
 import './NavBar.css'
 
 //refer to defined routes in App.js, be consistent on the route naming.
 //create log-out link
 export default class NavBar extends Component {
+
+  static contextType = NavContext
+
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
     TokenService.clearUserId();
+    this.context.setAuthToken(TokenService.getAuthToken())
   }
 
-  // renderUserName = () => {
-  //   if(TokenService.getAuthToken()) {
-  //     return <h3 className='username'>{TokenService.getAuthToken()}</h3>
-  //   } else {
-  //     return <h3 className='username'>Guest</h3>
-  //   }
-  // }
+  renderUserName = () => {
+    if(this.context.authToken) {
+      return <h3 className='username'>{TokenService.getUserName()}</h3>
+    } else {
+      return <h3 className='username'>Guest</h3>
+    }
+  }
 
   renderLogoutLink() {
     return (
-      <div className="log-in">
-        {/* {this.renderUserName} */}
+      <nav className="log-in">
         <li>
           <NavLink
             to='/home'
@@ -58,7 +62,7 @@ export default class NavBar extends Component {
             Logout
           </NavLink>
         </li>
-      </div>
+      </nav>
     )
   }
 
@@ -96,6 +100,9 @@ export default class NavBar extends Component {
   render() {
     return (
       <nav className='nav'>
+        <header className="header">
+          <Link to="/home"><h2 className="app-title">Mood Journal</h2></Link>
+        </header>
         {/* <ul>
         <li>
             <NavLink to='/'>

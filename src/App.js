@@ -7,10 +7,11 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import MoodPage from './pages/MoodPage/MoodPage';
 import NavBar from './components/NavBar/NavBar';
 import LandingPage from './components/LandingPage/LandingPage'
-//import MoodListItem from './components/MoodListItem/MoodListItem'
+//import MoodListItem from './components/MoodListItem/MoodListItem';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import AddEntry from './components/AddEntry/AddEntry';
+import EditForm from './components/EditForm/EditForm';
 import './App.css'
 
 //reroute pages to components in the PAGES folder
@@ -41,6 +42,10 @@ class App extends Component {
         <PublicOnlyRoute
           path={'/login'}
           component={LoginPage}
+        />
+        <PrivateRoute
+          path={'/entries/:entry_id'}
+          component={EditForm}
         />
         <PrivateRoute
           path={'/newmoods'}

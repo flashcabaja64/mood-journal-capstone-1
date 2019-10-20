@@ -5,12 +5,15 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { MoodPageProvider } from './MoodContext/MoodContext'
 import { CommentProvider } from './MoodContext/CommentContext';
+import { NavProvider } from './MoodContext/NavContext'
 
 ReactDOM.render(
   <BrowserRouter>
-  <CommentProvider>
-  <MoodPageProvider>
-    <App />
-  </MoodPageProvider>
-  </CommentProvider>
+    <NavProvider>
+      <CommentProvider>
+        <MoodPageProvider>
+          <App />
+        </MoodPageProvider>
+      </CommentProvider>
+    </NavProvider>
   </BrowserRouter>, document.getElementById('root'));

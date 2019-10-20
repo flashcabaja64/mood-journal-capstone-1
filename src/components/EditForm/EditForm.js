@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import MoodContext from '../../MoodContext/MoodContext';
+import EntryApiService from '../../services/entry-api-service'
+import TokenService from '../../services/token-service';
 
 export default class EditForm extends Component {
   constructor(props) {
@@ -9,33 +11,71 @@ export default class EditForm extends Component {
   static contextType = MoodContext
 
 	state = {
+    user_id: '',
 		title: '',
 		content: '',
 		duration: '',
-		mood_type: '',
+    mood_type: '',
+    error: null,
   }
   
   handleEditClick = e => {
     e.preventDefault();
     //need to create and pass prop to this component
-    const { entryId } = this.props.id
+    const { entry_id } = this.props.match.params
+    console.log(entry_id)
     //need to create context to edit
-    const { title, content, duration, mood_type } = this.state;
-    const updatedEntry = { title, content, duration, mood_type } 
+    const { title, content, duration, mood_type } = e.target;
+    //const updatedEntry = { title, content, duration, mood_type };
+    this.setState({ error: null })
+
+    EntryApiService.patchEntry(
+      entry_id,
+      TokenService.getUserId(),
+      title.value,
+      content.value,
+      Number(duration.value),
+      mood_type.value
+    )
+      .then(this.context.updateEntry)
+      .then(() => {
+        title.value = ''
+        content.value = ''
+        duration.value = ''
+				mood_type.value = ''
+      })
+      .catch(this.context.setError)
   }
 
   onChangeHandle = e => {
     this.setState({[e.target.name]: e.target.value})
   }
 
+  componentDidMount() {
+    const {entryId} = this.props.match.params;
+    EntryApiService.getEntry(entryId)
+      .then(res => {
+        this.setState({
+          id: res.id,
+          title: res.title,
+          content: res.content,
+          duration: res.duration,
+          mood_type: res.mood_type,
+          date_created: res.date_created,
+          user_id: res.user_id,
+        })
+      })
+      .catch(err => console.error(`${err.message}`))
+  }
+
   render() {
     return (
       <div>
       <header>
-    <h1>New Mood</h1>
+    <h1>Edit Mood</h1>
     </header>
     <section>
-    <form id="record-mood" onSubmit={this.handleAddMood}>
+    <form id="record-mood" onSubmit={this.handleEditClick}>
       <div className="form-section">
       <label htmlFor="mood-title">Current Mood</label>
       <input
@@ -43,6 +83,7 @@ export default class EditForm extends Component {
         name="title"
         placeholder="Feeling weird"
         onChange={this.onChangeHandle}
+        required
       />
       </div>
       <div className="form-section">
@@ -53,6 +94,7 @@ export default class EditForm extends Component {
         columns="30"
         placeholder="Type your entry..."
         onChange={this.onChangeHandle}
+        required
       >
       </textarea>
       </div>
@@ -63,6 +105,7 @@ export default class EditForm extends Component {
         name="duration"
         placeholder="0"
         onChange={this.onChangeHandle}
+        required
       />
       </div>
       <div className="form-section">

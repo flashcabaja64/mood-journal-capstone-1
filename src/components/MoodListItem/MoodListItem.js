@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //import config from '../../config'
 import MoodContext from '../../MoodContext/MoodContext';
 import EntryApiService from '../../services/entry-api-service';
+//import EditForm from '../EditForm/EditForm'
 
 export default class MoodListItem extends Component {
 
@@ -28,6 +29,7 @@ export default class MoodListItem extends Component {
 		e.preventDefault();
 	}
 
+	/* HOW TO CONVERT THIS ROUTE INTO a BUTTON */
 	render() {
 		const {entry} = this.props
 		return (
@@ -36,17 +38,13 @@ export default class MoodListItem extends Component {
 						<p>{entry.content}</p>
 						<p>Mood duration: {entry.duration} hours</p>
 						<p>Mood Type: {entry.mood_type}</p>
-						<button
-							type='button'
-							//onClick={}
-							>
-							Edit
-						</button>
+
+						<Link to={`/entries/${entry.id}`}>Edit</Link>
 						<button
 							type='button'
 							onClick={this.handleDeleteClick}
 						>
-						Delete							
+							Delete							
 						</button>
 				</div>
 		)

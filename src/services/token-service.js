@@ -10,6 +10,9 @@ const TokenService = {
   getUserId() {
     return window.localStorage.getItem(config.USER_ID)
   },
+  getUserName() {
+    return window.localStorage.getItem(config.USER_ID)
+  },
   getAuthToken() {
     return window.localStorage.getItem(config.TOKEN_KEY)
   },

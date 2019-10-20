@@ -7,6 +7,8 @@ const MoodContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   addEntry: () => {},
+  deleteEntryPage: () => {},
+  updateEntry: () => {},
 })
 
 export default MoodContext
@@ -44,6 +46,17 @@ export class MoodPageProvider extends Component {
     this.setState({ entries: filterEntries})
   }
 
+  updateEntry = updatedEntry => {
+    const newEntry = this.state.entries.map(entry =>
+      (entry.id === updatedEntry.id)
+        ? updatedEntry
+        : entry
+    );
+    this.setState({
+      entries: newEntry
+    })
+  }
+
   render() {
     const value = {
       entries: this.state.entries,
@@ -52,7 +65,8 @@ export class MoodPageProvider extends Component {
       clearError: this.clearError,
       setEntryList: this.setEntryList,
       addEntry: this.addEntry,
-      deleteEntryPage: this.deleteEntryPage
+      deleteEntryPage: this.deleteEntryPage,
+      updateEntry: this.updateEntry,
     }
     return (
       <MoodContext.Provider value={value}>

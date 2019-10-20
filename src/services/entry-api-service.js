@@ -14,7 +14,7 @@ const EntryApiService = {
         : res.json()
       )
   },
-
+  //get one entry
   getEntry(entryId) {
     return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       headers: {
@@ -40,7 +40,7 @@ const EntryApiService = {
           : res.json()
         )
   },
-//EDIT THIS (MAY NOT BE RIGHT!!!!)
+
   postEntry(user_id, title, content, duration, mood_type) {
     console.log(user_id)
     return fetch(`${config.API_ENDPOINT}/entries`, {
@@ -84,28 +84,42 @@ const EntryApiService = {
         )
   },
 
-  
-  //ADD PATCH METHOD
-  patchEntry(entryId, title, content, duration, mood_type) {
-    return fetch(`${config.API_ENDPOINT}/${entryId}`, {
+  //ADD PATCH METHOD **unfunctional**
+  patchEntry(entryId, user_id, title, content, duration, mood_type) {
+    return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
-      }
+      },
+      body: JSON.stringify({
+        entryId,
+        user_id,
+        title,
+        content,
+        duration,
+        mood_type
+      })
     })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
   },
 
   //ADD DELETE METHOD
   deleteEntry(entryId) {
-    fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
+    return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
+      body: JSON.stringify(entryId)
     })
     .then(res => {
+      console.log(res)
       if (!res.ok) {
         return res.json().then(e => Promise.reject(e));
       }

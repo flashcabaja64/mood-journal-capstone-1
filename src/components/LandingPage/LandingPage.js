@@ -31,7 +31,7 @@ export default class LandingPage extends Component {
         <p>This is a whole list view of journal entries to give a general picture of how often you document an entry.</p>
       </section>
     </main>
-    <footer aria="content-info">Created by Hubert Yang</footer>
+    <footer aria-label="content-info">Created by Hubert Yang</footer>
     </>
     )
   }

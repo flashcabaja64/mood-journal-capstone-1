@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MoodContext from '../../MoodContext/MoodContext';
 import EntryApiService from '../../services/entry-api-service'
 import MoodListItem from '../../components/MoodListItem/MoodListItem';
+//import EditForm from '../../components/EditForm'
 
 export default class MoodPage extends Component {
 

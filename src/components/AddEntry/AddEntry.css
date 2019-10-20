@@ -1,0 +1,12 @@
+.new-mood {
+  height: 100%;
+  display: flex;
+}
+
+form {
+  justify-content: center;
+}
+
+.form-section {
+  margin: 2%;
+}
