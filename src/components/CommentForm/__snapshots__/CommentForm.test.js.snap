@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders UI as expected 1`] = `
+<form>
+  <div
+    className="comment-form-container"
+  >
+    <textarea
+      className="comment-text comment-text-input"
+      cols="30"
+      id="text"
+      name="text"
+      placeholder="Leave your comment"
+      required={true}
+      rows="3"
+    />
+  </div>
+  <button
+    className="comment-button"
+    type="submit"
+  >
+    Add Comment
+  </button>
+</form>
+`;

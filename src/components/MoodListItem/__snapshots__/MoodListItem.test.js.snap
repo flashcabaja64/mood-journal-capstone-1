@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoodListItem component testing renders UI as expected 1`] = `
+<div
+  className="mood-entry"
+>
+  <div
+    className="wrap-mood-entry"
+  >
+    <div
+      className="entry-wrap"
+    >
+      <h1
+        className="entry-title"
+      >
+        title 1
+      </h1>
+      <span
+        className="focus-input"
+      />
+      <p
+        className="entry-content"
+      >
+        content 1
+      </p>
+      <span
+        className="focus-input"
+      />
+      <p>
+        Mood duration: 
+        1
+         hours
+      </p>
+      <span
+        className="focus-input"
+      />
+      <p>
+        Mood Type: 
+        Low
+      </p>
+      <span
+        className="focus-input"
+      />
+      <div
+        className="entry-btn-container"
+      >
+        <a
+          className="edit-btn-link"
+          href="/entries/1"
+          onClick={[Function]}
+        >
+          <button
+            className="edit-btn"
+            type="button"
+          >
+            Edit
+          </button>
+        </a>
+        <span
+          className="focus-input"
+        />
+        <button
+          className="del-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
+        <span
+          className="focus-input"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

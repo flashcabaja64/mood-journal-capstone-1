@@ -1,0 +1,6 @@
+.mood-page {
+  margin: 0 auto;
+  min-width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,132 @@
+/* Register.js containers */
+.main-register {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrap-register {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  border-radius: 27px;
+}
+
+.form-wrap-register {
+  width: 60%;
+  border-radius: 27px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.089)
+}
+
+/* Form */
+.signup-form {
+  width: 100%;
+  position: relative;
+  padding: 15px 0 20px 0;
+}
+
+/* Input fields */
+.register-input {
+  border-radius: 27px;
+  padding: 12px 20px ;
+}
+
+input.register-full_name, input.register-nickname,
+input.register-user_name, input.register-password {
+  display: block;
+  position: relative;
+  border-radius: 27px;
+  width: 100%;
+  margin-top: .5%;
+  height: 35px;
+  line-height: 1.2;
+  text-align: center;
+  
+  font-size: 17px;
+  background: #1A5486;
+  color: white;
+}
+
+
+/* [Focus Input is being used in the LoginForm.css] */
+
+/* Button */
+
+.register-btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.register-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  width: 30%;
+  height: 30px;
+  background-color: rgb(0, 29, 54);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+
+  font-family: 'Arial';
+  line-height: 1.2;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+button.register-btn:hover {
+  background-color: #1A5486;
+}
+
+@-webkit-keyframes register-btn {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes register-btn {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.login-btn {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.register-btn:hover, .register-btn:focus, .register-btn:active {
+  -webkit-animation-name: register-btn;
+  animation-name: register-btn;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}

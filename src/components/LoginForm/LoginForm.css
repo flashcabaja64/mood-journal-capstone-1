@@ -1,0 +1,163 @@
+/* LoginForm.js containers */
+.main-login {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrap-login {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  border-radius: 27px;
+}
+
+.form-wrap-login {
+  width: 60%;
+  border-radius: 27px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.089)
+}
+
+/* Form */
+.LoginForm {
+  width: 100%;
+  position: relative;
+  padding: 15px 0 20px 0;
+}
+
+/* Input fields */
+.login-input {
+  border-radius: 27px;
+  padding: 12px 20px ;
+}
+
+input:focus {
+  border-color: transparent;
+}
+
+input.login-user_name, input.login-password {
+  display: block;
+  position: relative;
+  border-radius: 27px;
+  width: 100%;
+  margin-top: .5%;
+  height: 35px;
+  line-height: 1.2;
+  text-align: center;
+
+  font-size: 17px;
+  background: #1A5486;
+  color: white;
+}
+
+input::-webkit-input-placeholder { color: white;}
+input:-moz-placeholder { color: white;}
+input::-moz-placeholder { color: white;}
+input:-ms-input-placeholder { color: white;}
+
+/* Original [Focus Input]  */
+.focus-input {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 27px;
+  background-color: rgb(22, 39, 75);
+  pointer-events: none;
+  
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+input:focus + .focus-input {
+  width: calc(100% + 20px);
+}
+
+/* Button */
+
+.login-btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.login-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  width: 30%;
+  height: 30px;
+  background-color: rgb(0, 29, 54);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+
+  font-family: 'Arial';
+  line-height: 1.2;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+button.login-btn:hover {
+  background-color: #1A5486;
+}
+
+@-webkit-keyframes login-btn {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes login-btn {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.login-btn {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.login-btn:hover, .login-btn:focus, .login-btn:active {
+  -webkit-animation-name: login-btn;
+  animation-name: login-btn;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}

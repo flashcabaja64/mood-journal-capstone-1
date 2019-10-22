@@ -1,0 +1,125 @@
+.mood-entry {
+  width: 100%;
+  margin: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.wrap-mood-entry {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  position: relative;
+  z-index: 1;
+  border-radius: 27px;
+}
+
+.entry-wrap {
+  border-radius: 27px;
+  overflow: hidden;
+  width: 75%;
+  position: relative;
+  padding: 15px 0 20px 0;
+  box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.089)
+}
+  /*                  */
+ /*                     */
+/*                        */
+/* Original [Focus Input (class)] in LoginForm.css */
+/*                      */
+/*                     */
+/*                    */
+
+/* Entry details */
+.entry-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 1% 0 6% 0;
+  line-height: 35px;
+}
+
+.entry-content {
+  font-size: 1.2rem;
+}
+
+.entry-btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 10px;
+}
+
+.edit-btn, .del-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  padding: 0 10px;
+  width: 30%;
+  height: 30px;
+  background-color: rgb(0, 29, 54);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  font-family: 'Arial';
+  letter-spacing: 2px;
+  line-height: 1.2;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.edit-btn {
+  width: 200%;
+}
+
+.edit-btn-link {
+  width: 15%;
+}
+
+button.edit-btn:hover, button.del-btn:hover {
+  background-color: #1A5486;
+}
+
+@-webkit-keyframes btn-animation {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes btn-animation {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.del-btn, .edit-btn {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.del-btn:hover, .del-btn:focus, .del-btn:active,
+.edit-btn:hover, .edit-btn:focus, .edit-btn:active {
+  -webkit-animation-name: btn-animation;
+  animation-name: btn-animation;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}

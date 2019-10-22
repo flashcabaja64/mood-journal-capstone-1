@@ -93,38 +93,37 @@ const EntryApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        entryId,
+        entry_id: entryId,
         user_id,
         title,
         content,
         duration,
-        mood_type
+        mood_type,
       })
     })
     .then(res =>
       (!res.ok)
         ? res.json().then(e => Promise.reject(e))
-        : res.json()
+        : undefined
     )
   },
 
   //ADD DELETE METHOD
   deleteEntry(entryId) {
+    console.log(entryId)
     return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       method: "DELETE",
+      mode: "cors",
       headers: {
         "content-type": "application/json",
         'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-      body: JSON.stringify(entryId)
-    })
-    .then(res => {
-      console.log(res)
-      if (!res.ok) {
-        return res.json().then(e => Promise.reject(e));
       }
-      return res.json();
     })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : undefined
+    )
     .catch(error => {
       console.error({ error });
     });

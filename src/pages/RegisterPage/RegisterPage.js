@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Register from '../../components/Register/Register';
+import './RegisterPage.css'
 
 export default class RegisterPage extends Component {
   static defaultProps = {
@@ -15,8 +16,8 @@ export default class RegisterPage extends Component {
 
   render() {
     return(
-      <div className="RegisterPage">
-        <h2>Registration Page</h2>
+      <div className="register_page">
+        <h2 className="register-title">Start Journaling Now</h2>
         <Register
           onRegisterSuccess={this.handleRegisterSuccess}
         />

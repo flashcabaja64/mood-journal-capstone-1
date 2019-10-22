@@ -1,0 +1,19 @@
+.login_page h1 {
+  line-height: 1.2;
+  text-align: center;
+  font-size: 2.5rem;
+
+  display: block;
+  position: absolute;
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 4%;
+
+}
+
+.login_page {
+  margin: 0 auto;
+  min-width: 100vw;
+  text-align: center;
+  display: inline-flex;
+}

@@ -12,6 +12,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import AddEntry from './components/AddEntry/AddEntry';
 import EditForm from './components/EditForm/EditForm';
+
 import './App.css'
 
 //reroute pages to components in the PAGES folder

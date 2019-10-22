@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders UI as expected 1`] = `
+<div
+  className="register_page"
+>
+  <h2
+    className="register-title"
+  >
+    Start Journaling Now
+  </h2>
+  <div
+    className="main-register"
+  >
+    <div
+      className="wrap-register"
+    >
+      <div
+        className="form-wrap-register"
+      >
+        <form
+          className="signup-form"
+          onSubmit={[Function]}
+        >
+          <div
+            className="register-input full_name"
+          >
+            <label
+              htmlFor="full_name"
+            >
+              Full-Name
+            </label>
+            <input
+              className="register-full_name"
+              id="full_name"
+              name="full_name"
+              onChange={[Function]}
+              placeholder="Full-Name"
+              required={true}
+              type="text"
+            />
+            <span
+              className="focus-input"
+            />
+            <div
+              className="error-message"
+            >
+              Input field cannot be empty
+            </div>
+          </div>
+          <div
+            className="register-input nickname"
+          >
+            <label
+              htmlFor="nickname"
+            >
+              Nickname
+            </label>
+            <input
+              className="register-nickname"
+              id="nickname"
+              name="nickname"
+              onChange={[Function]}
+              placeholder="Nickname (optional)"
+              type="text"
+            />
+            <span
+              className="focus-input"
+            />
+            <div
+              className="error-message"
+            >
+              Input field cannot be empty
+            </div>
+          </div>
+          <div
+            className="register-input user_name"
+          >
+            <label
+              htmlFor="user_name"
+            >
+              Username
+            </label>
+            <input
+              className="register-user_name"
+              id="user_name"
+              name="user_name"
+              onChange={[Function]}
+              placeholder="Username"
+              required={true}
+              type="text"
+            />
+            <span
+              className="focus-input"
+            />
+            <div
+              className="error-message"
+            >
+              Input field cannot be empty
+            </div>
+          </div>
+          <div
+            className="register-input password"
+          >
+            <label
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="register-password"
+              id="password"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              required={true}
+              type="password"
+            />
+            <span
+              className="focus-input"
+            />
+            <div
+              className="error-message"
+            >
+              Password must be longer than 8 characters
+            </div>
+          </div>
+          <div
+            className="register-btn-container"
+          >
+            <button
+              className="register-btn"
+              disabled="Input field cannot be empty"
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

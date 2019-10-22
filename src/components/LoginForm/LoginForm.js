@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import './LoginForm.css'
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -35,38 +36,50 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state;
     return(
-      <form
-        className='LoginForm'
-        onSubmit={this.handleSubmitJwtAuth}
-      >
-      <div role='alert'>
-        {error && <p className='red'>{error}</p>}
+      <div className="main-login">
+        <div className="wrap-login">
+          <div className="form-wrap-login">
+            <form
+              className='LoginForm'
+              onSubmit={this.handleSubmitJwtAuth}
+            >
+            <div role='alert'>
+              {error && <p className='red'>{error}</p>}
+            </div>
+            <div className='login-input user_name'>
+              <label htmlFor='LoginForm_user_name'> Username
+              </label>
+              <input
+                required
+                className='login-user_name'
+                placeholder="Username"
+                name='user_name'
+                id='LoginForm_user_name'
+              />
+              <span className="focus-input"></span>
+            </div>
+            <div className='login-input password'>
+              <label htmlFor='LoginForm_password'>Password
+              </label>
+              <input
+                required
+                className='login-password'
+                placeholder="Password"
+                name='password'
+                type='password'
+                id='LoginForm_password'
+              />
+              <span className="focus-input"></span>
+            </div>
+            <div className="login-btn-container">
+            <button type='submit' className="login-btn">
+              Login
+            </button>
+            </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <div className='user_name'>
-        <label htmlFor='LoginForm_user_name'>
-          User-name
-        </label>
-        <input
-          required
-          name='user_name'
-          id='LoginForm_user_name'
-        />
-      </div>
-      <div className='password'>
-        <label htmlFor='LoginForm_password'>
-          Password
-        </label>
-        <input
-          required
-          name='password'
-          type='password'
-          id='LoginForm_password'
-        />
-      </div>
-      <button type='submit'>
-        Login
-      </button>
-      </form>
     )
   }
 }

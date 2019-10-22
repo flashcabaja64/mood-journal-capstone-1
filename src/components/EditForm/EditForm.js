@@ -6,18 +6,23 @@ import TokenService from '../../services/token-service';
 export default class EditForm extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      user_id: '',
+      title: '',
+      content: '',
+      duration: '',
+      mood_type: '',
+      error: null,
+			touched : {
+				title: false,
+				content: false,
+				duration: false,
+			}
+    }
   }
 
   static contextType = MoodContext
-
-	state = {
-    user_id: '',
-		title: '',
-		content: '',
-		duration: '',
-    mood_type: '',
-    error: null,
-  }
   
   handleEditClick = e => {
     e.preventDefault();
@@ -25,35 +30,66 @@ export default class EditForm extends Component {
     const { entry_id } = this.props.match.params
     console.log(entry_id)
     //need to create context to edit
-    const { title, content, duration, mood_type } = e.target;
-    //const updatedEntry = { title, content, duration, mood_type };
     this.setState({ error: null })
 
     EntryApiService.patchEntry(
-      entry_id,
+      Number(entry_id),
       TokenService.getUserId(),
-      title.value,
-      content.value,
-      Number(duration.value),
-      mood_type.value
+			this.state.title,
+			this.state.content,
+			Number(this.state.duration),
+			this.state.mood_type
     )
-      .then(this.context.updateEntry)
-      .then(() => {
-        title.value = ''
-        content.value = ''
-        duration.value = ''
-				mood_type.value = ''
-      })
+      .then((e) => this.context.updateEntry({
+        id: Number(entry_id),
+        user_id: TokenService.getUserId(),
+        title: this.state.title,
+        content: this.state.content,
+        duration: this.state.duration,
+        mood_type: this.state.mood_type,
+      }))
       .catch(this.context.setError)
+      this.props.history.push('/moods')
   }
 
-  onChangeHandle = e => {
-    this.setState({[e.target.name]: e.target.value})
+	onChangeHandle = (e) => {
+		this.setState({
+			[e.target.name]: e.target.value,
+			touched: { [e.target.name]: true }
+		})
   }
+  
+  validateTitle() {
+		let name = this.state.title.trim();
+		if (name.length === 0) {
+			return 'Please enter more than 1 character';
+		}
+		if (name.length < 6) {
+			return 'Please enter a name that is at least 6 characters long'
+		}
+	}
+
+	validateContent() {
+		let content = this.state.content.trim();
+		let words = this.state.content.split(' ')
+		if (content.length === 0) {
+			return 'Please enter more than 1 character'
+		}
+		if (words.length < 3) {
+			return 'Please enter more than 3 words'
+		}
+	}
+
+	validationDuration() {
+		let num = this.state.duration;
+		if(num < 0) {
+			return 'Please enter a number greater than zero'
+		}
+	}
 
   componentDidMount() {
-    const {entryId} = this.props.match.params;
-    EntryApiService.getEntry(entryId)
+    const {entry_id} = this.props.match.params;
+    EntryApiService.getEntry(entry_id)
       .then(res => {
         this.setState({
           id: res.id,
@@ -66,7 +102,14 @@ export default class EditForm extends Component {
         })
       })
       .catch(err => console.error(`${err.message}`))
+      EntryApiService.getEntries()
+      .then(this.context.setEntryList)
+      .catch(this.context.setError)
   }
+
+  // componentDidUpdate() {
+
+  // }
 
   render() {
     return (
