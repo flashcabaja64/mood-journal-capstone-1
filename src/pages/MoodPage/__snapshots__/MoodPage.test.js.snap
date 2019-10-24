@@ -1,24 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders UI as expected 1`] = `
-<div
-  className="mood-page"
->
-  <div
-    className="search-content"
+Array [
+  <h3
+    className="search-title"
   >
-    <h3>
-      Search Entry Contents:
-    </h3>
-    <input
-      onChange={[Function]}
-      placeholder="Search journal entry contents..."
-      type="text"
-      value=""
-    />
-  </div>
-  <h1>
-    My Moods
-  </h1>
-</div>
+    Search Entry Contents:
+  </h3>,
+  <input
+    className="mood-page-input"
+    onChange={[Function]}
+    placeholder="Search journal entry contents..."
+    type="text"
+    value=""
+  />,
+  <div
+    className="mood-page"
+  >
+    <h1>
+      My Moods
+    </h1>
+  </div>,
+]
 `;

@@ -19,4 +19,5 @@ describe('NavBar component testing', () => {
         .toJSON();
         expect(tree).toMatchSnapshot();
   })
+
 })

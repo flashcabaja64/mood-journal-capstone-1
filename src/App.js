@@ -33,6 +33,11 @@ class App extends Component {
       <NavBar />
       <Switch>
         <Route
+          exact
+          path={'/'}
+          component={LandingPage}
+        />
+        <Route
           path={'/home'}
           component={LandingPage}
         />

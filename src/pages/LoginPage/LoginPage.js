@@ -13,13 +13,9 @@ export default class LoginPage extends Component {
 
   static contextType = NavContext
 
-  handleLoginSuccess = (token) => {
-    console.log('testing')
-    //const { location, history } = this.props
+  handleLoginSuccess = (ev) => {
     const { history } = this.props
-    // const destination = (location.state || {}).from || '/home'
-    this.context.setAuthToken(token)
-    //const destination = '/home';
+    this.context.setAuthToken(ev)
     history.push('/home')
   }
 
@@ -29,6 +25,7 @@ export default class LoginPage extends Component {
         <h1>Login</h1>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
+          history={this.props.history}
         />
       </div>
     )

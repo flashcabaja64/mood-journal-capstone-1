@@ -4,3 +4,28 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+/* Title of the 'My Moods' tab page */
+.mood-page>h1 {
+  display: block;
+  font-size: 3rem;
+  padding: 40px 0 10px 0;
+  margin: 0 auto;
+}
+
+/* Search title and input field */
+h3.search-title {
+  font-size: 20px;
+  font-style: italic;
+  padding-bottom: 0;
+  display: block;
+  margin-left: 20px;
+}
+
+input.mood-page-input {
+  display: block;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 15px;
+  width: 10rem;
+}

@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+//import CommentContext from '../../MoodContext/CommentContext'
 import MoodContext from '../../MoodContext/MoodContext';
 import EntryApiService from '../../services/entry-api-service'
 import MoodListItem from '../../components/MoodListItem/MoodListItem';
 import './MoodPage.css'
 
 export default class MoodPage extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
+  // }
 
-    this.state = {
-      search: ''
-    }
+  state = {
+    search: ''
   }
   static contextType = MoodContext;
+  //static contextType = CommentContext;
 
   // Can possibly delete .then and .catch block
   componentDidMount() {
@@ -26,16 +28,16 @@ export default class MoodPage extends Component {
     this.setState({ search: e.target.value })
   }
 
-  renderEntries() {
-    const { entries = [] } = this.context
-    return entries.map(entry =>
-      <MoodListItem
-        key={entry.id}
-        id={entry.id}
-        entry={entry}
-      />
-    )
-  }
+  // renderEntries() {
+  //   const { entries = [] } = this.context
+  //   return entries.map(entry =>
+  //     <MoodListItem
+  //       key={entry.id}
+  //       id={entry.id}
+  //       entry={entry}
+  //     />
+  //   )
+  // }
 
   render() {
     const { entries = [] } = this.context
@@ -52,16 +54,16 @@ export default class MoodPage extends Component {
     }
     
     return(
-      <div className="mood-page">
-        <div className="search-content">
-        <h3>Search Entry Contents:</h3>
+      <>
+        <h3 className="search-title">Search Entry Contents:</h3>
           <input
+            className="mood-page-input"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
             placeholder="Search journal entry contents...">
           </input>
-        </div>
+        <div className="mood-page">
         <h1>My Moods</h1>
         {filterEntries.map(entry =>
           <MoodListItem
@@ -69,8 +71,9 @@ export default class MoodPage extends Component {
             id={entry.id}
             entry={entry}
         />)}
+        </div>
         {/* {this.renderEntries()} */}
-      </div>
+      </>
     )
   }
 }

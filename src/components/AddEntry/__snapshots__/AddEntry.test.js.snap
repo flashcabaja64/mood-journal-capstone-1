@@ -5,7 +5,9 @@ exports[`AddEntry component renders UI as expected 1`] = `
   className="new-mood"
 >
   <header>
-    <h1>
+    <h1
+      className="new-mood-title"
+    >
       New Mood
     </h1>
   </header>
@@ -197,7 +199,9 @@ exports[`AddEntry component renders an .AddEntry by default 1`] = `
   className="new-mood"
 >
   <header>
-    <h1>
+    <h1
+      className="new-mood-title"
+    >
       New Mood
     </h1>
   </header>

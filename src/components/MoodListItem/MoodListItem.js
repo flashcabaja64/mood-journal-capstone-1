@@ -36,9 +36,9 @@ export default class MoodListItem extends Component {
 							<span className="focus-input"></span>
 							<p className="entry-content">{entry.content}</p>
 							<span className="focus-input"></span>
-							<p>Mood duration: {entry.duration} hours</p>
+							<p className="entry-duration">Mood duration: {entry.duration} hours</p>
 							<span className="focus-input"></span>
-							<p>Mood Type: {entry.mood_type}</p>
+							<p className="entry-type">Mood Type: {entry.mood_type}</p>
 							<span className="focus-input"></span>
 							<div className="entry-btn-container">
 								<Link to={`/entries/${entry.id}`} className="edit-btn-link">
@@ -57,7 +57,7 @@ export default class MoodListItem extends Component {
 								>
 									Delete
 								</button>
-							<span className="focus-input"></span>
+								<span className="focus-input"></span>
 							</div>
 						</div>
 					</div>

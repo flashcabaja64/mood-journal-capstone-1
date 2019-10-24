@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import toJson from 'enzyme-to-json'
 import AddEntry from './AddEntry'
 import renderer from 'react-test-renderer';
+import enzyme from 'enzyme'
 
 describe('AddEntry component', () => {
   
@@ -28,5 +29,12 @@ describe('AddEntry component', () => {
       .create(<AddEntry />)
       .toJSON();
       expect(tree).toMatchSnapshot();
+  })
+
+  it('should trigger onChange event', () => {
+    let changeText = 'text';
+    const wrapper = enzyme.shallow(<AddEntry onChange={(value) => changeText = value} />)
+    wrapper.find('input[name="title"]').simulate('change', { target: {value: 'text'}});
+    expect(changeText).toEqual('text')
   })
 })

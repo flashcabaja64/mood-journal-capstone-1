@@ -19,12 +19,12 @@ export class NavProvider extends Component {
   }
   
   render() {
-    const navValue = {
+    const value = {
       authToken: this.state.authToken,
       setAuthToken: this.setAuthToken
     }
     return (
-      <NavContext.Provider value={navValue}>
+      <NavContext.Provider value={value}>
         {this.props.children}
       </NavContext.Provider>
     )

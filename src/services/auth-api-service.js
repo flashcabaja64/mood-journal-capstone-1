@@ -19,6 +19,7 @@ const AuthApiService = {
       .then(res => {
         TokenService.saveAuthToken(res.authToken);
         TokenService.saveUserId(res.user.user_id);
+        return res;
       })
   },
 

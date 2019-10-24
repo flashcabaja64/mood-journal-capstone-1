@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders UI as expected 1`] = `
+exports[`LoginPage component testing renders UI as expected 1`] = `
 <div
   className="login_page"
 >
@@ -76,5 +76,23 @@ exports[`renders UI as expected 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`LoginPage component testing renders empty given no tabs 1`] = `
+<div
+  className="login_page"
+>
+  <h1>
+    Login
+  </h1>
+  <LoginForm
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    onLoginSuccess={[Function]}
+  />
 </div>
 `;

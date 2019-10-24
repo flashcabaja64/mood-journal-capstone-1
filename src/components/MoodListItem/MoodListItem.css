@@ -20,7 +20,7 @@
 .entry-wrap {
   border-radius: 27px;
   overflow: hidden;
-  width: 75%;
+  width: 30rem;
   position: relative;
   padding: 15px 0 20px 0;
   box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.089)
@@ -37,12 +37,18 @@
 .entry-title {
   font-size: 2.1rem;
   font-weight: 700;
-  margin: 1% 0 6% 0;
-  line-height: 35px;
+  margin: 1% 0 4% 0;
+  line-height: 30px;
 }
 
 .entry-content {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  margin: 1% 0 7% 0;
+  padding: 0 2% 0 2%;
+}
+
+.entry-duration, .entry-type {
+  font-size: .8rem;
 }
 
 .entry-btn-container {

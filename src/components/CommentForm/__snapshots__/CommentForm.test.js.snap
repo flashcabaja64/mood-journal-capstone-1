@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders UI as expected 1`] = `
-<form>
+<form
+  onSubmit={[Function]}
+>
   <div
     className="comment-form-container"
   >
@@ -19,7 +21,7 @@ exports[`renders UI as expected 1`] = `
     className="comment-button"
     type="submit"
   >
-    Add Comment
+    Post Comment
   </button>
 </form>
 `;

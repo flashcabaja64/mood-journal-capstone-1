@@ -59,12 +59,12 @@ const EntryApiService = {
     })
     .then(res =>
       (!res.ok)
-      ? res.json().then(e => Promise.reject(e))
-      : res.json()
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
     )
   },
 
-  postComment(entryId, text, rating) {
+  postComment(user_id, entry_id, text) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
@@ -72,8 +72,8 @@ const EntryApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        entry_id: entryId,
-        rating,
+        user_id,
+        entry_id,
         text,
       })
     })

@@ -1,8 +1,55 @@
 .new-mood {
-  height: 100%;
-  display: flex;
+  width: 100%;
+  display: block;
+  text-align: center;
 }
 
-.form-section {
-  margin: 2%;
+.new-mood-title {
+  font-size: 3rem;
+  margin: 40px 0 40px 0;
+}
+
+#record-mood {
+  width: 100%;
+  text-align: center;
+}
+/* Textarea box css */
+div.form-section>label.label-title {
+  font-size: 1.1rem;
+  display: block;
+  margin: 1.2rem 0 .3rem 0;
+}
+
+/* input[name="title"] {
+
+} */
+
+.new-mood-content {
+  height: 12rem;
+  width: 22rem;
+  resize: none;
+}
+/* Radio buttons styling */
+.form-section .radio-title {
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 1.2rem;
+}
+
+div.radio-form {
+  margin: 0 15% 0 15%;
+}
+
+label[for="mood-type"]>span {
+  font-size: 1.5rem;
+}
+
+.mood-type-explanation {
+  margin: .5rem 0 2rem 0;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 40px;
+  height: 1.5em;
 }

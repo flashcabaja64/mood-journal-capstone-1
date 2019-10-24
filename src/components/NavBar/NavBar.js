@@ -130,7 +130,7 @@ export default class NavBar extends Component {
             </NavLink>
           </li> */}
           <li>
-          {TokenService.hasAuthToken()
+          {this.context.authToken
             ? this.renderLogoutLink()
             : this.renderLoginLink()}
           </li>

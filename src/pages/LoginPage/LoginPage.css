@@ -6,9 +6,8 @@
   display: block;
   position: absolute;
   width: 100%;
-  padding-top: 5%;
-  padding-bottom: 4%;
-
+  padding: 20px 0 20px 0;
+  z-index: 2;
 }
 
 .login_page {

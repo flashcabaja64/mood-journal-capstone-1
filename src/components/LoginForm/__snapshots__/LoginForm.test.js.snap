@@ -71,3 +71,75 @@ exports[`LoginForm component testing renders UI as expected 1`] = `
   </div>
 </div>
 `;
+
+exports[`LoginForm component testing submits information after clicking click 1`] = `
+<div
+  className="main-login"
+>
+  <div
+    className="wrap-login"
+  >
+    <div
+      className="form-wrap-login"
+    >
+      <form
+        className="LoginForm"
+        onSubmit={[Function]}
+      >
+        <div
+          role="alert"
+        />
+        <div
+          className="login-input user_name"
+        >
+          <label
+            htmlFor="LoginForm_user_name"
+          >
+             Username
+          </label>
+          <input
+            className="login-user_name"
+            id="LoginForm_user_name"
+            name="user_name"
+            placeholder="Username"
+            required={true}
+          />
+          <span
+            className="focus-input"
+          />
+        </div>
+        <div
+          className="login-input password"
+        >
+          <label
+            htmlFor="LoginForm_password"
+          >
+            Password
+          </label>
+          <input
+            className="login-password"
+            id="LoginForm_password"
+            name="password"
+            placeholder="Password"
+            required={true}
+            type="password"
+          />
+          <span
+            className="focus-input"
+          />
+        </div>
+        <div
+          className="login-btn-container"
+        >
+          <button
+            className="login-btn"
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

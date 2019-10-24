@@ -34,7 +34,7 @@ export default class Register extends Component {
 
   validateFullname() {
     let fullName = this.state.full_name.trim();
-    const allLetters = /^[a-zA-Z]+$/;
+    const allLetters = /[a-zA-Z]+\s\D/;
 
 		if (fullName.length === 0) {
 			return 'Input field cannot be empty';
@@ -46,7 +46,7 @@ export default class Register extends Component {
       return 'Name must include only alphabetical letters';
     }
     if(fullName.length > 50) {
-      return 'Your name must be less than 50 chracters';
+      return 'Your name must be less than 50 characters';
     }
   }
   
@@ -60,37 +60,34 @@ export default class Register extends Component {
 			return 'Please enter a name that is at least 6 characters long';
     }
     if(username.length > 50) {
-      return 'Your name must be less than 50 chracters';
+      return 'Your name must be less than 50 characters';
     }
   }
 
-  validateNickname() {
-    let nickname = this.state.nickname.trim();
+  // validateNickname() {
+  //   let nickname = this.state.nickname.trim();
 
-    if (nickname.length === 0) {
-			return 'Input field cannot be empty';
-		}
-		if (nickname.length < 6) {
-			return 'Please enter a name that is at least 6 characters long';
-    }
-    if(nickname.length > 30) {
-      return 'Your name must be less than 30 chracters';
-    }
-  }
+  //   if (nickname.length === 0) {
+	// 		return 'Input field cannot be empty';
+	// 	}
+	// 	if (nickname.length < 6) {
+	// 		return 'Please enter a name that is at least 6 characters long';
+  //   }
+  //   if(nickname.length > 30) {
+  //     return 'Your name must be less than 30 characters';
+  //   }
+  // }
   
   validatePassword(){
-    const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/
+    const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])[\S]+/
     const password = this.state.password.trim();
     const passTest = this.state.password;
 
     if(password.length < 8){
       return 'Password must be longer than 8 characters';
     }
-    if(password.length > 72){
-      return 'Password must be less than 72 characters';
-    }
-    if(password.startsWith(' ') || password.endsWith(' ')){
-      return 'Password must not start or end with an empty space';
+    if(password.length > 30){
+      return 'Password must be less than 30 characters';
     }
     if(!REGEX_UPPER_LOWER_NUMBER_SPECIAL.test(passTest)){
       return 'Password must contain 1 upper case, lower case, number, and special character';
@@ -124,7 +121,7 @@ export default class Register extends Component {
     const fullnameError = this.validateFullname();
     const usernameError = this.validateUsername();
     const passwordError = this.validatePassword();
-    const nicknameError = this.validateNickname();
+    //const nicknameError = this.validateNickname();
     return (
       <div className="main-register">
         
@@ -152,14 +149,14 @@ export default class Register extends Component {
               <label htmlFor="nickname">Nickname</label>
               <input
                 className="register-nickname"
-                placeholder='Nickname (optional)'
+                placeholder='Nickname'
                 type="text"
                 name='nickname'
                 id='nickname'
                 onChange={this.onChangeHandle}
               />
               <span className="focus-input"></span>
-              <ValidateError message={nicknameError} />
+              {/* <ValidateError message={nicknameError} /> */}
             </div>
             <div className="register-input user_name">
               <label htmlFor="user_name">Username</label>
@@ -180,6 +177,7 @@ export default class Register extends Component {
               <input
                 className="register-password"
                 placeholder="Password"
+                maxLength="31"
                 type="password"
                 name='password'
                 id='password'
@@ -193,7 +191,7 @@ export default class Register extends Component {
               <button
                 type='submit'
                 className="register-btn"
-                disabled={ fullnameError || nicknameError || passwordError || usernameError }
+                disabled={ fullnameError || passwordError || usernameError }
               >
                 Register
               </button>

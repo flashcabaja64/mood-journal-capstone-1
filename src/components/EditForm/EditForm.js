@@ -141,7 +141,7 @@ export default class EditForm extends Component {
       >
       </textarea>
       </div>
-      <div className="time-mood-container" className="form-section">
+      <div className="form-section">
       <label htmlFor="time-mood">How long did the mood last?</label>
       <input
         type="number"

@@ -12,7 +12,7 @@
   align-items: center;
   min-height: 100vh;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   border-radius: 27px;
 }
 
@@ -160,4 +160,11 @@ button.login-btn:hover {
   animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-login, .wrap-login, .form-wrap-login,
+  .LoginForm {
+    width: 450px;
+  }
 }
