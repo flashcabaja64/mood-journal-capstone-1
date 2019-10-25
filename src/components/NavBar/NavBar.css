@@ -1,16 +1,29 @@
 li {
   display: inline-block;
-
 }
 
 .nav-link {
   display: block;
-  color: #F0E345;
+  color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1.5rem 1.5rem;
   text-decoration: none;
 }
 
 .nav-link:hover {
-  background-color:#1A5486;
+  background-color:#0E182D;
+}
+
+.app-title {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 14px 16px;
+  font-family: 'Chango', cursive;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+nav.nav {
+  background-color: #1A5486;
 }

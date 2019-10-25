@@ -34,7 +34,6 @@ export default class LandingPage extends Component {
           </section>
         </div>
       </main>
-    <footer aria-label="content-info">Created by Hubert Yang</footer>
     </>
     )
   }

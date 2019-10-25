@@ -4,10 +4,13 @@ exports[`renders UI as expected 1`] = `
 Array [
   <h3
     className="search-title"
+    id="searchEntry"
   >
     Search Entry Contents:
   </h3>,
   <input
+    aria-describedby="searchEntry"
+    aria-label="search for entry contents"
     className="mood-page-input"
     onChange={[Function]}
     placeholder="Search journal entry contents..."

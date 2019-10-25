@@ -19,10 +19,14 @@ exports[`Registration form testing renders UI as expected 1`] = `
         >
           <label
             htmlFor="full_name"
+            id="registerFull"
           >
             Full-Name
           </label>
           <input
+            aria-describedby="registerFull"
+            aria-label="enter full name"
+            aria-required="true"
             className="register-full_name"
             id="full_name"
             name="full_name"
@@ -45,10 +49,14 @@ exports[`Registration form testing renders UI as expected 1`] = `
         >
           <label
             htmlFor="nickname"
+            id="registerNick"
           >
             Nickname
           </label>
           <input
+            aria-describedby="registerNick"
+            aria-label="enter nickname"
+            aria-required="true"
             className="register-nickname"
             id="nickname"
             name="nickname"
@@ -65,10 +73,14 @@ exports[`Registration form testing renders UI as expected 1`] = `
         >
           <label
             htmlFor="user_name"
+            id="registerUser"
           >
             Username
           </label>
           <input
+            aria-describedby="registerUser"
+            aria-label="enter username"
+            aria-required="true"
             className="register-user_name"
             id="user_name"
             name="user_name"
@@ -91,10 +103,14 @@ exports[`Registration form testing renders UI as expected 1`] = `
         >
           <label
             htmlFor="password"
+            id="registerPass"
           >
             Password
           </label>
           <input
+            aria-describedby="registerPass"
+            aria-label="enter password"
+            aria-required="true"
             className="register-password"
             id="password"
             maxLength="31"
@@ -149,10 +165,14 @@ exports[`Registration form testing submits information after clicking click 1`] 
         >
           <label
             htmlFor="full_name"
+            id="registerFull"
           >
             Full-Name
           </label>
           <input
+            aria-describedby="registerFull"
+            aria-label="enter full name"
+            aria-required="true"
             className="register-full_name"
             id="full_name"
             name="full_name"
@@ -173,10 +193,14 @@ exports[`Registration form testing submits information after clicking click 1`] 
         >
           <label
             htmlFor="nickname"
+            id="registerNick"
           >
             Nickname
           </label>
           <input
+            aria-describedby="registerNick"
+            aria-label="enter nickname"
+            aria-required="true"
             className="register-nickname"
             id="nickname"
             name="nickname"
@@ -193,10 +217,14 @@ exports[`Registration form testing submits information after clicking click 1`] 
         >
           <label
             htmlFor="user_name"
+            id="registerUser"
           >
             Username
           </label>
           <input
+            aria-describedby="registerUser"
+            aria-label="enter username"
+            aria-required="true"
             className="register-user_name"
             id="user_name"
             name="user_name"
@@ -217,10 +245,14 @@ exports[`Registration form testing submits information after clicking click 1`] 
         >
           <label
             htmlFor="password"
+            id="registerPass"
           >
             Password
           </label>
           <input
+            aria-describedby="registerPass"
+            aria-label="enter password"
+            aria-required="true"
             className="register-password"
             id="password"
             maxLength="31"

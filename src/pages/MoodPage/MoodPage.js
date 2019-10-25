@@ -10,34 +10,29 @@ export default class MoodPage extends Component {
   //   super(props)
   // }
 
+  static defaultProps = {
+    match: { params: {} },
+  }
+
   state = {
     search: ''
   }
   static contextType = MoodContext;
-  //static contextType = CommentContext;
 
-  // Can possibly delete .then and .catch block
   componentDidMount() {
+    //const { entry_id } = this.props.match.params
     this.context.clearError()
     EntryApiService.getEntries()
       .then(this.context.setEntryList)
       .catch(this.context.setError)
+    // EntryApiService.getEntryComments(entry_id)
+    //   .then(this.context.setComment)
+    //   .catch(this.context.setError)
   }
 
   onSearch = e => {
     this.setState({ search: e.target.value })
   }
-
-  // renderEntries() {
-  //   const { entries = [] } = this.context
-  //   return entries.map(entry =>
-  //     <MoodListItem
-  //       key={entry.id}
-  //       id={entry.id}
-  //       entry={entry}
-  //     />
-  //   )
-  // }
 
   render() {
     const { entries = [] } = this.context
@@ -55,13 +50,15 @@ export default class MoodPage extends Component {
     
     return(
       <>
-        <h3 className="search-title">Search Entry Contents:</h3>
+        <h3 id="searchEntry" className="search-title">Search Entry Contents:</h3>
           <input
             className="mood-page-input"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
-            placeholder="Search journal entry contents...">
+            placeholder="Search journal entry contents..."
+            aria-label="search for entry contents"
+            aria-describedby="searchEntry">
           </input>
         <div className="mood-page">
         <h1>My Moods</h1>
@@ -76,4 +73,18 @@ export default class MoodPage extends Component {
       </>
     )
   }
-}
+};
+
+// function EntryComments({ comments = [] }) {
+//   return (
+//     <ul className="entry-comments-list">
+//       {comments.map(comment =>
+//         <li key={comment.id} className="entry-comments">
+//           <p className="entry-comments-text">
+//             {comment.text}
+//           </p>
+//         </li>
+//         )}
+//     </ul>
+//   )
+// }

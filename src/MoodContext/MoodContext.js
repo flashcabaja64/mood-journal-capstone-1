@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 const MoodContext = React.createContext({
   entries: [],
+  comments: [],
   error:null,
   setEntryList: () => {},
   setError: () => {},
+  setComment: () => {},
   clearError: () => {},
   addEntry: () => {},
+  addComment: () => {},
   deleteEntryPage: () => {},
   updateEntry: () => {},
 })
@@ -16,6 +19,7 @@ export default MoodContext
 export class MoodPageProvider extends Component {
   state = {
     entries: [],
+    comments: [],
     error: null,
   }
 
@@ -28,6 +32,10 @@ export class MoodPageProvider extends Component {
     this.setState({ error })
   }
 
+  setComment = comments => {
+    this.setState({ comments })
+  }
+
   clearError = () => {
     this.setState({ error: null })
   }
@@ -36,6 +44,13 @@ export class MoodPageProvider extends Component {
     this.setEntryList([
       ...this.state.entries,
       entry
+    ])
+  }
+
+  addComment = comment => {
+    this.setComments([
+      ...this.state.comments,
+      comment
     ])
   }
 
@@ -62,9 +77,11 @@ export class MoodPageProvider extends Component {
       entries: this.state.entries,
       error: this.state.error,
       setError: this.setError,
-      clearError: this.clearError,
+      setComment: this.setComment,
       setEntryList: this.setEntryList,
+      clearError: this.clearError,
       addEntry: this.addEntry,
+      addComment: this.addComment,
       deleteEntryPage: this.deleteEntryPage,
       updateEntry: this.updateEntry,
     }

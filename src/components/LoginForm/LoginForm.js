@@ -43,7 +43,7 @@ export default class LoginForm extends Component {
               {error && <p className='red'>{error}</p>}
             </div>
             <div className='login-input user_name'>
-              <label htmlFor='LoginForm_user_name'> Username
+              <label id="loginUser" htmlFor='LoginForm_user_name'> Username
               </label>
               <input
                 required
@@ -51,11 +51,14 @@ export default class LoginForm extends Component {
                 placeholder="Username"
                 name='user_name'
                 id='LoginForm_user_name'
+                aria-label="enter user name"
+                aria-required="true"
+                aria-describedby="loginUser"
               />
               <span className="focus-input"></span>
             </div>
             <div className='login-input password'>
-              <label htmlFor='LoginForm_password'>Password
+              <label id="loginPass" htmlFor='LoginForm_password'>Password
               </label>
               <input
                 required
@@ -64,6 +67,9 @@ export default class LoginForm extends Component {
                 name='password'
                 type='password'
                 id='LoginForm_password'
+                aria-label="enter user password"
+                aria-required="true"
+                aria-describedby="loginPass"
               />
               <span className="focus-input"></span>
             </div>

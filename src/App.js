@@ -12,6 +12,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import AddEntry from './components/AddEntry/AddEntry';
 import EditForm from './components/EditForm/EditForm';
+import Dashboard from './pages/Dashboard/Dashboard'
 
 import './App.css'
 
@@ -60,6 +61,10 @@ class App extends Component {
         <PrivateRoute
           path={'/moods'}
           component={MoodPage}
+        />
+        <PrivateRoute
+          path={'/dashboard'}
+          component={Dashboard}
         />
         <Route 
           component={NotFoundPage}

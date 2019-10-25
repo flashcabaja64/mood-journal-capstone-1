@@ -132,7 +132,7 @@ export default class Register extends Component {
               onSubmit={this.handleSubmit}
             >
             <div className="register-input full_name">
-              <label htmlFor="full_name">Full-Name</label>
+              <label id="registerFull" htmlFor="full_name">Full-Name</label>
               <input
                 className="register-full_name"
                 placeholder='Full-Name'
@@ -141,12 +141,16 @@ export default class Register extends Component {
                 id='full_name'
                 onChange={this.onChangeHandle}
                 required
+                aria-label="enter full name"
+                aria-required="true"
+                aria-describedby="registerFull"
+
               />
               <span className="focus-input"></span>
               <ValidateError message={fullnameError} />
             </div>
             <div className="register-input nickname">
-              <label htmlFor="nickname">Nickname</label>
+              <label id="registerNick" htmlFor="nickname">Nickname</label>
               <input
                 className="register-nickname"
                 placeholder='Nickname'
@@ -154,12 +158,15 @@ export default class Register extends Component {
                 name='nickname'
                 id='nickname'
                 onChange={this.onChangeHandle}
+                aria-label="enter nickname"
+                aria-required="true"
+                aria-describedby="registerNick"
               />
               <span className="focus-input"></span>
               {/* <ValidateError message={nicknameError} /> */}
             </div>
             <div className="register-input user_name">
-              <label htmlFor="user_name">Username</label>
+              <label id="registerUser" htmlFor="user_name">Username</label>
               <input
                 className="register-user_name"
                 placeholder="Username"
@@ -168,12 +175,16 @@ export default class Register extends Component {
                 id='user_name'
                 onChange={this.onChangeHandle}
                 required
+                aria-label="enter username"
+                aria-required="true"
+                aria-describedby="registerUser"
+
               />
               <span className="focus-input"></span>
               <ValidateError message={usernameError} />
             </div>
             <div className="register-input password">
-              <label htmlFor="password">Password</label>
+              <label id="registerPass" htmlFor="password">Password</label>
               <input
                 className="register-password"
                 placeholder="Password"
@@ -183,6 +194,10 @@ export default class Register extends Component {
                 id='password'
                 onChange={this.onChangeHandle}
                 required
+                aria-label="enter password"
+                aria-required="true"
+                aria-describedby="registerPass"
+
               />
               <span className="focus-input"></span>
               <ValidateError message={passwordError} />

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service'
 import NavContext from '../../MoodContext/NavContext'
 //import MoodPage from '../../pages/MoodPage/MoodPage'
@@ -28,6 +28,7 @@ export default class NavBar extends Component {
   renderLogoutLink() {
     return (
       <nav className="log-in">
+        {this.renderUserName}
         <li>
           <NavLink
             to='/home'
@@ -54,7 +55,14 @@ export default class NavBar extends Component {
         </li>
         <li>
           <NavLink
+            to='/dashboard'
             activeClassName="active"
+            className="nav-link">
+            Dashboard
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             className="nav-link"
             onClick={this.handleLogoutClick}
             exact
@@ -68,7 +76,7 @@ export default class NavBar extends Component {
 
   renderLoginLink() {
     return (
-      <div className="log-out">
+      <Fragment>
         <li>
           <NavLink
             to='/home'
@@ -88,53 +96,30 @@ export default class NavBar extends Component {
         <li>
         <NavLink
           to='/login'
-          activeClassName="active"
           className="nav-link">
           Log-in
         </NavLink>
         </li>
-      </div>
+      </Fragment>
     )
   }
 
   render() {
     return (
       <nav className='nav'>
-        <header className="header">
-          <Link to="/home"><h2 className="app-title">Mood Journal</h2></Link>
+        <header className="main-app-name">
+        <NavLink
+          exact
+          to="/"
+          className="app-title">
+          Mood Journal
+        </NavLink>
+          <Fragment>
+            {this.context.authToken
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()}
+          </Fragment>
         </header>
-        {/* <ul>
-        <li>
-            <NavLink to='/'>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/moods'>
-              My Moods
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/newmoods'>
-              New Mood
-            </NavLink>
-          </li>
-           <li>
-            <NavLink to='/login'>
-              Log-in
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/register'>
-              Register
-            </NavLink>
-          </li> */}
-          <li>
-          {this.context.authToken
-            ? this.renderLogoutLink()
-            : this.renderLoginLink()}
-          </li>
-        {/* </ul> */}
       </nav>
     )
   }

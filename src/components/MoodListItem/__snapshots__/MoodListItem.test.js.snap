@@ -26,7 +26,9 @@ exports[`MoodListItem component testing renders UI as expected 1`] = `
       <span
         className="focus-input"
       />
-      <p>
+      <p
+        className="entry-duration"
+      >
         Mood duration: 
         1
          hours
@@ -34,7 +36,9 @@ exports[`MoodListItem component testing renders UI as expected 1`] = `
       <span
         className="focus-input"
       />
-      <p>
+      <p
+        className="entry-type"
+      >
         Mood Type: 
         Low
       </p>

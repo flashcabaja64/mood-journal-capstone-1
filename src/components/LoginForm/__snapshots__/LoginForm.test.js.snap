@@ -22,10 +22,14 @@ exports[`LoginForm component testing renders UI as expected 1`] = `
         >
           <label
             htmlFor="LoginForm_user_name"
+            id="loginUser"
           >
              Username
           </label>
           <input
+            aria-describedby="loginUser"
+            aria-label="enter user name"
+            aria-required="true"
             className="login-user_name"
             id="LoginForm_user_name"
             name="user_name"
@@ -41,10 +45,14 @@ exports[`LoginForm component testing renders UI as expected 1`] = `
         >
           <label
             htmlFor="LoginForm_password"
+            id="loginPass"
           >
             Password
           </label>
           <input
+            aria-describedby="loginPass"
+            aria-label="enter user password"
+            aria-required="true"
             className="login-password"
             id="LoginForm_password"
             name="password"
@@ -94,10 +102,14 @@ exports[`LoginForm component testing submits information after clicking click 1`
         >
           <label
             htmlFor="LoginForm_user_name"
+            id="loginUser"
           >
              Username
           </label>
           <input
+            aria-describedby="loginUser"
+            aria-label="enter user name"
+            aria-required="true"
             className="login-user_name"
             id="LoginForm_user_name"
             name="user_name"
@@ -113,10 +125,14 @@ exports[`LoginForm component testing submits information after clicking click 1`
         >
           <label
             htmlFor="LoginForm_password"
+            id="loginPass"
           >
             Password
           </label>
           <input
+            aria-describedby="loginPass"
+            aria-label="enter user password"
+            aria-required="true"
             className="login-password"
             id="LoginForm_password"
             name="password"
