@@ -64,19 +64,6 @@ export default class Register extends Component {
     }
   }
 
-  // validateNickname() {
-  //   let nickname = this.state.nickname.trim();
-
-  //   if (nickname.length === 0) {
-	// 		return 'Input field cannot be empty';
-	// 	}
-	// 	if (nickname.length < 6) {
-	// 		return 'Please enter a name that is at least 6 characters long';
-  //   }
-  //   if(nickname.length > 30) {
-  //     return 'Your name must be less than 30 characters';
-  //   }
-  // }
   
   validatePassword(){
     const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])[\S]+/
