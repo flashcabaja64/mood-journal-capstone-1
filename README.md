@@ -15,23 +15,23 @@ This app was built using React, Express.js, Postgres, and Node. Testing was done
 ## Screenshots
 Add Entry Page
 
-![Add Entry page image](./screenshots/add_page.png "Add Entry page")
+![Add Entry page image](./screenshots/add_page.PNG)
 
 Dashboard Page
 
-![Dashboard page image](./screenshots/dashboard_page.png "Dashboard page")
+![Dashboard page image](./screenshots/dashboard_page.PNG)
 
 Moods Page
 
-![Mood page image](./screenshots/moods_page.png "Moods page")
+![Mood page image](./screenshots/moods_page.PNG)
 
 Login Page
 
-![Login page image](./screenshots/login_page.png "Login page")
+![Login page image](./screenshots/login_page.PNG)
 
 Registration Page
 
-![Registration page image](./screenshots/register_page.png "Registration page")
+![Registration page image](./screenshots/register_page.PNG)
 
 
 Technologies used
