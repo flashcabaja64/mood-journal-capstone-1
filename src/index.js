@@ -7,6 +7,8 @@ import { MoodPageProvider } from './MoodContext/MoodContext'
 import { CommentProvider } from './MoodContext/CommentContext';
 import { NavProvider } from './MoodContext/NavContext'
 
+console.log(process.env)
+
 ReactDOM.render(
   <BrowserRouter>
     <NavProvider>
