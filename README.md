@@ -7,6 +7,7 @@ This mood journal is a documentation of your moods and/or emotions. After collec
 ### `website`
 
 [Live App](https://journal-app.hubertyang.now.sh/)
+
 [Github server repo](https://github.com/flashcabaja64/mood-journal-server)
 
 
@@ -15,23 +16,23 @@ This app was built using React, Express.js, Postgres, and Node. Testing was done
 ## Screenshots
 Add Entry Page
 
-![Add Entry page image](./screenshots/add_page.PNG)
+![Add Entry page image](./src/screenshots/add_page.PNG)
 
 Dashboard Page
 
-![Dashboard page image](./screenshots/dashboard_page.PNG)
+![Dashboard page image](./src/screenshots/dashboard_page.PNG)
 
 Moods Page
 
-![Mood page image](./screenshots/moods_page.PNG)
+![Mood page image](./src/screenshots/moods_page.PNG)
 
 Login Page
 
-![Login page image](./screenshots/login_page.PNG)
+![Login page image](./src/screenshots/login_page.PNG)
 
 Registration Page
 
-![Registration page image](./screenshots/register_page.PNG)
+![Registration page image](./src/screenshots/register_page.PNG)
 
 
 Technologies used
