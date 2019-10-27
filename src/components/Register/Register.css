@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  padding-top: 10%;
   position: relative;
   z-index: 1;
   border-radius: 27px;

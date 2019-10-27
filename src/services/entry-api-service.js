@@ -14,7 +14,7 @@ const EntryApiService = {
         : res.json()
       )
   },
-  //get one entry
+
   getEntry(entryId) {
     return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       headers: {
@@ -42,7 +42,6 @@ const EntryApiService = {
   },
 
   postEntry(user_id, title, content, duration, mood_type) {
-    console.log(user_id)
     return fetch(`${config.API_ENDPOINT}/entries`, {
       method: 'POST',
       headers: {
@@ -84,7 +83,6 @@ const EntryApiService = {
         )
   },
 
-  //ADD PATCH METHOD **unfunctional**
   patchEntry(entryId, user_id, title, content, duration, mood_type) {
     return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       method: 'PATCH',
@@ -108,9 +106,7 @@ const EntryApiService = {
     )
   },
 
-  //ADD DELETE METHOD
   deleteEntry(entryId) {
-    console.log(entryId)
     return fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       method: "DELETE",
       mode: "cors",

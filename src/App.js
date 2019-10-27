@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-//import config from './config';
 import PrivateRoute from '../src/components/Utils/PrivateRoute';
 import PublicOnlyRoute from '../src/components/Utils/PublicOnlyRoute';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MoodPage from './pages/MoodPage/MoodPage';
 import NavBar from './components/NavBar/NavBar';
 import LandingPage from './components/LandingPage/LandingPage'
-//import MoodListItem from './components/MoodListItem/MoodListItem';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import AddEntry from './components/AddEntry/AddEntry';
@@ -24,13 +22,11 @@ class App extends Component {
     hasError: false,
   };
 
-  //state = { hasError: false }
+
 
   render() {
     return (
       <main className='App'>
-        {/* {this.state.error && <p className='error'>There was an error.</p>} */}
-
       <NavBar />
       <Switch>
         <Route

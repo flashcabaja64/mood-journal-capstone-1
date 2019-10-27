@@ -4,236 +4,245 @@ exports[`AddEntry component renders UI as expected 1`] = `
 <div
   className="new-mood"
 >
-  <header>
-    <h1
-      className="new-mood-title"
-    >
-      New Mood
-    </h1>
-  </header>
-  <section>
-    <form
-      id="record-mood"
-      onSubmit={[Function]}
-    >
-      <div
-        className="form-section"
+  <div
+    className="new-mood-wrap"
+  >
+    <header>
+      <h1
+        className="new-mood-title"
       >
-        <label
-          className="label-title"
-          htmlFor="mood-title"
-          id="moodTitle"
-        >
-          Current Mood
-        </label>
-        <input
-          aria-describedby="moodTitle"
-          aria-label="Title of current mood"
-          aria-required="true"
-          name="title"
-          onChange={[Function]}
-          placeholder="Feeling weird"
-          required={true}
-          type="text"
-        />
-        <div
-          className="error-message"
-        >
-          Please enter more than 1 character
-        </div>
-      </div>
-      <div
-        className="form-section"
-      >
-        <label
-          className="label-title"
-          htmlFor="mood-content"
-          id="moodContent"
-        >
-          Why am I feeling this way?
-        </label>
-        <textarea
-          aria-describedby="moodContent"
-          aria-label="describe your current mood"
-          aria-required="true"
-          className="new-mood-content"
-          columns="30"
-          name="content"
-          onChange={[Function]}
-          placeholder="Type your entry..."
-          required={true}
-          rows="15"
-        />
-        <div
-          className="error-message"
-        >
-          Please enter more than 1 character.
-        </div>
-      </div>
-      <div
-        className="form-section"
-      >
-        <label
-          className="label-title"
-          htmlFor="time-mood"
-          id="moodTime"
-        >
-          How long did the mood last?
-        </label>
-        <input
-          aria-describedby="moodTime"
-          aria-label="duration for current mood"
-          aria-required="true"
-          id="time-mood"
-          name="duration"
-          onChange={[Function]}
-          placeholder="1"
-          required={true}
-          type="number"
-        />
-      </div>
-      <div
-        className="radio-form"
+        New Mood
+      </h1>
+    </header>
+    <section>
+      <form
+        id="record-mood"
+        onSubmit={[Function]}
       >
         <div
           className="form-section"
         >
-          <p
-            className="radio-title"
+          <label
+            className="label-title"
+            htmlFor="mood-title"
+            id="moodTitle"
           >
-            Select mood range
-          </p>
+            Current Mood
+          </label>
           <input
-            aria-describedby="moodBalanced"
-            aria-label="balanced mood range"
-            aria-required="true"
-            className="mood-type-radio"
-            name="mood_type"
+            aria-describedby="moodTitle"
+            aria-label="Title of current mood"
+            name="title"
             onChange={[Function]}
+            placeholder="Feeling weird"
             required={true}
-            type="radio"
-            value="Balanced"
+            type="text"
           />
-          <label
-            htmlFor="mood-type"
+          <div
+            className="error-message"
           >
-            <span>
-              Balanced
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodBalanced"
-            >
-              This is a stable conditional mood people experience in a typical day. Things are balanced, and moods are not spiking high, and steeping low.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodLow"
-            aria-label="low mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Low"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Low
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodLow"
-            >
-              Mood likes this has people unmotivated, and only wanting to get through the day with the least amount of effort. This could range from depressive to sad thoughts.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodExtreme"
-            aria-label="extreme mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Extreme"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Extreme
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodExtreme"
-            >
-              When there is a rush of emotions that feels overpowering to where the person can still feel in control.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodErratic"
-            aria-label="erratic mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Erratic"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Erratic
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodErratic"
-            >
-              Unable to manage the state of mood, and could, at any time, result in making regrettable and unforseen decisions.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodUnsure"
-            aria-label="unsure mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Unsure"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Unsure
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodUnsure"
-            >
-              Sometimes moods cannot be labeled and we are unsure the exact mood we are experiencing. Try your best to describe it.
-            </div>
-          </label>
+            Please enter more than 1 character
+          </div>
         </div>
-      </div>
-      <button
-        disabled="Please enter more than 1 character"
-        type="submit"
-      >
-        Submit
-      </button>
-      <button
-        type="reset"
-      >
-        Reset
-      </button>
-    </form>
-  </section>
+        <div
+          className="form-section"
+        >
+          <label
+            className="label-title"
+            htmlFor="mood-content"
+            id="moodContent"
+          >
+            Why am I feeling this way?
+          </label>
+          <textarea
+            aria-describedby="moodContent"
+            aria-label="describe your current mood"
+            className="new-mood-content"
+            columns="30"
+            name="content"
+            onChange={[Function]}
+            placeholder="Type your entry..."
+            required={true}
+            rows="15"
+          />
+          <div
+            className="error-message"
+          >
+            Please enter more than 1 character.
+          </div>
+        </div>
+        <div
+          className="form-section"
+        >
+          <label
+            className="label-title"
+            htmlFor="time-mood"
+            id="moodTime"
+          >
+            How many hours did the mood last for?
+          </label>
+          <input
+            aria-describedby="moodTime"
+            aria-label="duration for current mood"
+            id="time-mood"
+            name="duration"
+            onChange={[Function]}
+            placeholder="1"
+            required={true}
+            type="number"
+          />
+          <div
+            className="error-message"
+          >
+            Please choose a number greater than zero
+          </div>
+        </div>
+        <div
+          className="radio-form"
+        >
+          <div
+            className="form-section"
+          >
+            <p
+              className="radio-title"
+            >
+              Select mood range
+            </p>
+            <input
+              aria-describedby="moodBalanced"
+              aria-label="balanced mood range"
+              className="mood-type-radio"
+              name="mood_type"
+              onChange={[Function]}
+              required={true}
+              type="radio"
+              value="Balanced"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Balanced
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodBalanced"
+              >
+                This is a stable conditional mood people experience in a typical day. Things are balanced, and moods are not spiking high, and steeping low.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodLow"
+              aria-label="low mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Low"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Low
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodLow"
+              >
+                Mood likes this has people unmotivated, and only wanting to get through the day with the least amount of effort. This could range from depressive to sad thoughts.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodExtreme"
+              aria-label="extreme mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Extreme"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Extreme
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodExtreme"
+              >
+                When there is a rush of emotions that feels overpowering to where the person can still feel in control.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodErratic"
+              aria-label="erratic mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Erratic"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Erratic
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodErratic"
+              >
+                Unable to manage the state of mood, and could, at any time, result in making regrettable and unforseen decisions.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodUnsure"
+              aria-label="unsure mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Unsure"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Unsure
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodUnsure"
+              >
+                Sometimes moods cannot be labeled and we are unsure the exact mood we are experiencing. Try your best to describe it.
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          className="new-mood-btn-container"
+        >
+          <button
+            disabled="Please enter more than 1 character"
+            type="submit"
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
 </div>
 `;
 
@@ -241,232 +250,238 @@ exports[`AddEntry component renders an .AddEntry by default 1`] = `
 <div
   className="new-mood"
 >
-  <header>
-    <h1
-      className="new-mood-title"
-    >
-      New Mood
-    </h1>
-  </header>
-  <section>
-    <form
-      id="record-mood"
-      onSubmit={[Function]}
-    >
-      <div
-        className="form-section"
+  <div
+    className="new-mood-wrap"
+  >
+    <header>
+      <h1
+        className="new-mood-title"
       >
-        <label
-          className="label-title"
-          htmlFor="mood-title"
-          id="moodTitle"
-        >
-          Current Mood
-        </label>
-        <input
-          aria-describedby="moodTitle"
-          aria-label="Title of current mood"
-          aria-required="true"
-          name="title"
-          onChange={[Function]}
-          placeholder="Feeling weird"
-          required={true}
-          type="text"
-        />
-        <ValidateError
-          message="Please enter more than 1 character"
-        />
-      </div>
-      <div
-        className="form-section"
-      >
-        <label
-          className="label-title"
-          htmlFor="mood-content"
-          id="moodContent"
-        >
-          Why am I feeling this way?
-        </label>
-        <textarea
-          aria-describedby="moodContent"
-          aria-label="describe your current mood"
-          aria-required="true"
-          className="new-mood-content"
-          columns="30"
-          name="content"
-          onChange={[Function]}
-          placeholder="Type your entry..."
-          required={true}
-          rows="15"
-        />
-        <ValidateError
-          message="Please enter more than 1 character."
-        />
-      </div>
-      <div
-        className="form-section"
-      >
-        <label
-          className="label-title"
-          htmlFor="time-mood"
-          id="moodTime"
-        >
-          How long did the mood last?
-        </label>
-        <input
-          aria-describedby="moodTime"
-          aria-label="duration for current mood"
-          aria-required="true"
-          id="time-mood"
-          name="duration"
-          onChange={[Function]}
-          placeholder="1"
-          required={true}
-          type="number"
-        />
-        <ValidateError />
-      </div>
-      <div
-        className="radio-form"
+        New Mood
+      </h1>
+    </header>
+    <section>
+      <form
+        id="record-mood"
+        onSubmit={[Function]}
       >
         <div
           className="form-section"
         >
-          <p
-            className="radio-title"
+          <label
+            className="label-title"
+            htmlFor="mood-title"
+            id="moodTitle"
           >
-            Select mood range
-          </p>
+            Current Mood
+          </label>
           <input
-            aria-describedby="moodBalanced"
-            aria-label="balanced mood range"
-            aria-required="true"
-            className="mood-type-radio"
-            name="mood_type"
+            aria-describedby="moodTitle"
+            aria-label="Title of current mood"
+            name="title"
             onChange={[Function]}
+            placeholder="Feeling weird"
             required={true}
-            type="radio"
-            value="Balanced"
+            type="text"
           />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Balanced
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodBalanced"
-            >
-              This is a stable conditional mood people experience in a typical day. Things are balanced, and moods are not spiking high, and steeping low.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodLow"
-            aria-label="low mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Low"
+          <ValidateError
+            message="Please enter more than 1 character"
           />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Low
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodLow"
-            >
-              Mood likes this has people unmotivated, and only wanting to get through the day with the least amount of effort. This could range from depressive to sad thoughts.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodExtreme"
-            aria-label="extreme mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Extreme"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Extreme
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodExtreme"
-            >
-              When there is a rush of emotions that feels overpowering to where the person can still feel in control.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodErratic"
-            aria-label="erratic mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Erratic"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Erratic
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodErratic"
-            >
-              Unable to manage the state of mood, and could, at any time, result in making regrettable and unforseen decisions.
-            </div>
-          </label>
-          <input
-            aria-describedby="moodUnsure"
-            aria-label="unsure mood range"
-            className="mood-type-radio"
-            id="mood-type"
-            name="mood_type"
-            onChange={[Function]}
-            type="radio"
-            value="Unsure"
-          />
-          <label
-            htmlFor="mood-type"
-          >
-            <span>
-              Unsure
-            </span>
-            <div
-              className="mood-type-explanation"
-              id="moodUnsure"
-            >
-              Sometimes moods cannot be labeled and we are unsure the exact mood we are experiencing. Try your best to describe it.
-            </div>
-          </label>
         </div>
-      </div>
-      <button
-        disabled="Please enter more than 1 character"
-        type="submit"
-      >
-        Submit
-      </button>
-      <button
-        type="reset"
-      >
-        Reset
-      </button>
-    </form>
-  </section>
+        <div
+          className="form-section"
+        >
+          <label
+            className="label-title"
+            htmlFor="mood-content"
+            id="moodContent"
+          >
+            Why am I feeling this way?
+          </label>
+          <textarea
+            aria-describedby="moodContent"
+            aria-label="describe your current mood"
+            className="new-mood-content"
+            columns="30"
+            name="content"
+            onChange={[Function]}
+            placeholder="Type your entry..."
+            required={true}
+            rows="15"
+          />
+          <ValidateError
+            message="Please enter more than 1 character."
+          />
+        </div>
+        <div
+          className="form-section"
+        >
+          <label
+            className="label-title"
+            htmlFor="time-mood"
+            id="moodTime"
+          >
+            How many hours did the mood last for?
+          </label>
+          <input
+            aria-describedby="moodTime"
+            aria-label="duration for current mood"
+            id="time-mood"
+            name="duration"
+            onChange={[Function]}
+            placeholder="1"
+            required={true}
+            type="number"
+          />
+          <ValidateError
+            message="Please choose a number greater than zero"
+          />
+        </div>
+        <div
+          className="radio-form"
+        >
+          <div
+            className="form-section"
+          >
+            <p
+              className="radio-title"
+            >
+              Select mood range
+            </p>
+            <input
+              aria-describedby="moodBalanced"
+              aria-label="balanced mood range"
+              className="mood-type-radio"
+              name="mood_type"
+              onChange={[Function]}
+              required={true}
+              type="radio"
+              value="Balanced"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Balanced
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodBalanced"
+              >
+                This is a stable conditional mood people experience in a typical day. Things are balanced, and moods are not spiking high, and steeping low.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodLow"
+              aria-label="low mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Low"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Low
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodLow"
+              >
+                Mood likes this has people unmotivated, and only wanting to get through the day with the least amount of effort. This could range from depressive to sad thoughts.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodExtreme"
+              aria-label="extreme mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Extreme"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Extreme
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodExtreme"
+              >
+                When there is a rush of emotions that feels overpowering to where the person can still feel in control.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodErratic"
+              aria-label="erratic mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Erratic"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Erratic
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodErratic"
+              >
+                Unable to manage the state of mood, and could, at any time, result in making regrettable and unforseen decisions.
+              </div>
+            </label>
+            <input
+              aria-describedby="moodUnsure"
+              aria-label="unsure mood range"
+              className="mood-type-radio"
+              id="mood-type"
+              name="mood_type"
+              onChange={[Function]}
+              type="radio"
+              value="Unsure"
+            />
+            <label
+              htmlFor="mood-type"
+            >
+              <span>
+                Unsure
+              </span>
+              <div
+                className="mood-type-explanation"
+                id="moodUnsure"
+              >
+                Sometimes moods cannot be labeled and we are unsure the exact mood we are experiencing. Try your best to describe it.
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          className="new-mood-btn-container"
+        >
+          <button
+            disabled="Please enter more than 1 character"
+            type="submit"
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
 </div>
 `;

@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-//import CommentContext from '../../MoodContext/CommentContext'
 import MoodContext from '../../MoodContext/MoodContext';
 import EntryApiService from '../../services/entry-api-service'
 import MoodListItem from '../../components/MoodListItem/MoodListItem';
 import './MoodPage.css'
 
 export default class MoodPage extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
-
   static defaultProps = {
     match: { params: {} },
   }
 
+  static contextType = MoodContext;
+
   state = {
     search: ''
   }
-  static contextType = MoodContext;
 
   componentDidMount() {
     //const { entry_id } = this.props.match.params
@@ -50,26 +46,29 @@ export default class MoodPage extends Component {
     
     return(
       <>
-        <h3 id="searchEntry" className="search-title">Search Entry Contents:</h3>
-          <input
-            className="mood-page-input"
-            type="text"
-            value={this.state.search}
-            onChange={this.onSearch}
-            placeholder="Search journal entry contents..."
-            aria-label="search for entry contents"
-            aria-describedby="searchEntry">
-          </input>
+        <div className="search-wrap">
+          <h3 id="searchEntry" className="search-title">Search:</h3>
+            <input
+              className="mood-page-input"
+              type="text"
+              value={this.state.search}
+              onChange={this.onSearch}
+              placeholder="Search contents..."
+              aria-label="search for entry contents"
+              aria-describedby="searchEntry">
+            </input>
+        </div>
         <div className="mood-page">
         <h1>My Moods</h1>
-        {filterEntries.map(entry =>
-          <MoodListItem
-            key={entry.id}
-            id={entry.id}
-            entry={entry}
-        />)}
+          {filterEntries.map(entry =>
+            <MoodListItem
+              key={entry.id}
+              id={entry.id}
+              entry={entry}
+            />
+          )}
         </div>
-        {/* {this.renderEntries()} */}
+
       </>
     )
   }

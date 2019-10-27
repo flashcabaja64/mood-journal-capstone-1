@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MoodContext from '../MoodContext/MoodContext'
 import { Bar } from 'react-chartjs-2';
 import './MiscChart.css'
-//import EntryApiService from '../services/entry-api-service';
 
 export default class MiscChart extends Component {
   static contextType = MoodContext
@@ -11,8 +10,6 @@ export default class MiscChart extends Component {
     const { entries } = this.context;
     let hoursTotal = entries.map(entry => entry.duration).reduce((a, b) => a + b, 0);
     let entryTotal = entries.map(entry => entry).length
-    // console.log(durationTotal)
-    // console.log(entryTotal)
 
     const chartData = {
       datasets: [{

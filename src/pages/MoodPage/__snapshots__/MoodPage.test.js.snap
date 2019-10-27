@@ -13,7 +13,7 @@ Array [
     aria-label="search for entry contents"
     className="mood-page-input"
     onChange={[Function]}
-    placeholder="Search journal entry contents..."
+    placeholder="Search contents..."
     type="text"
     value=""
   />,

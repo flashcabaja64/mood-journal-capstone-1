@@ -13,7 +13,6 @@ export default class LoginForm extends Component {
     e.preventDefault();
     this.setState({ error: null })
     const { user_name, password } = e.target;
-    console.log('submitted')
 
     AuthApiService.postLogin({
       user_name: user_name.value,

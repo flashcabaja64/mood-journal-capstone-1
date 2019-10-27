@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import EntryApiService from '../../services/entry-api-service';
 import MoodContext from '../../MoodContext/MoodContext'
-//import CommentContext from '../../MoodContext/CommentContext'
 import TokenService from '../../services/token-service'
 
 export default class CommentForm extends Component {

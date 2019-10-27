@@ -97,8 +97,7 @@ export default class Register extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let { full_name, user_name, nickname, password } = this.state
-    console.log({ full_name, user_name, nickname, password })
-
+    
     AuthApiService.postUser({
       full_name,
       user_name,

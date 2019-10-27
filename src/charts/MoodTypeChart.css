@@ -5,3 +5,9 @@
   background-color: #414B60;
   border-radius: 20px;
 }
+
+@media screen and (min-width: 968px) {
+  .doughnut-chart {
+    width: 650px;
+  }
+}

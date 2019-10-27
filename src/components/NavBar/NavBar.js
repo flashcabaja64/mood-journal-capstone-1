@@ -2,11 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service'
 import NavContext from '../../MoodContext/NavContext'
-//import MoodPage from '../../pages/MoodPage/MoodPage'
 import './NavBar.css'
 
-//refer to defined routes in App.js, be consistent on the route naming.
-//create log-out link
 export default class NavBar extends Component {
 
   static contextType = NavContext

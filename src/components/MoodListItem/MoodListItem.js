@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import config from '../../config'
 import MoodContext from '../../MoodContext/MoodContext';
 import EntryApiService from '../../services/entry-api-service';
 import './MoodListItem.css'
-//import EditForm from '../EditForm/EditForm'
 
 export default class MoodListItem extends Component {
 
 	static contextType = MoodContext
 
-	//work on this later (error: SyntaxError: Unexpected end of JSON input)
 	handleDeleteClick = e => {
 		e.preventDefault()
 		const entryId = this.props.id;
@@ -18,7 +15,6 @@ export default class MoodListItem extends Component {
 
 		EntryApiService.deleteEntry(entryId)
 			.then(() => {
-				console.log('working delete')
 				deleteEntryPage(entryId)
 			})
 			.catch(err => {

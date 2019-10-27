@@ -5,6 +5,13 @@
   flex-wrap: wrap;
 }
 
+.search-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
 /* Title of the 'My Moods' tab page */
 .mood-page>h1 {
   display: block;
@@ -15,11 +22,13 @@
 
 /* Search title and input field */
 h3.search-title {
-  font-size: 20px;
+  font-size: 1.1rem;
   font-style: italic;
   padding-bottom: 0;
-  display: block;
-  margin-left: 20px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2;
 }
 
 input.mood-page-input {
@@ -27,5 +36,12 @@ input.mood-page-input {
   padding: 10px;
   margin-left: 20px;
   font-size: 15px;
-  width: 10rem;
+  width: 15rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+input.mood-page-input::placeholder {
+  color: black;
 }

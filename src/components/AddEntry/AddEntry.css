@@ -23,12 +23,12 @@ div.form-section>textarea  {
 
 div.form-section>textarea {
   font-family: 'Arial';
-  padding: 5px 0 5px 0;
+  padding: 5px 0;
 }
 
 .new-mood-title {
   font-size: 3rem;
-  margin: 40px 0 40px 0;
+  margin: 40px 0;
   padding-top: 20px;
 }
 
@@ -36,6 +36,7 @@ div.form-section>textarea {
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #time-mood {
@@ -63,7 +64,7 @@ div.form-section>label.label-title {
 }
 
 div.radio-form {
-  margin: 0 15% 0 15%;
+  margin: 0 15%;
 }
 
 label[for="mood-type"]>span {
@@ -72,10 +73,59 @@ label[for="mood-type"]>span {
 
 .mood-type-explanation {
   margin: .5rem 0 2rem 0;
+  text-align: left;
 }
 
 input[type="radio"] {
   border: 0px;
   width: 40px;
   height: 1.5em;
+}
+
+/* Buttons */
+.new-mood-btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.new-mood button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 27%;
+  height: 30px;
+  background-color: rgb(0, 29, 54);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  margin: 0 2%;
+
+  letter-spacing: 2px;
+  font-family: 'Arial';
+  line-height: 1.2;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.new-mood button:hover {
+  background-color: #1A5486;
+}
+
+@media screen and (min-width: 968px) {
+  .new-mood-wrap {
+    width: 650px;
+  }
 }

@@ -4,7 +4,6 @@ h2.register-title {
   font-size: 2.5rem;
 
   display: block;
-  position: absolute;
   width: 100%;
   padding-top: 5%;
   padding-bottom: 4%;
@@ -14,5 +13,5 @@ h2.register-title {
   margin: 0 auto;
   min-width: 100vw;
   text-align: center;
-  display: inline-flex;
+  display: inline-block;
 }

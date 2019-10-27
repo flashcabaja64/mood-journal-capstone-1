@@ -26,7 +26,6 @@ export default class AddEntry extends Component {
 	handleAddMood = e => {
 		e.preventDefault();
 		let {title, content, duration, mood_type } = this.state
-		console.log(TokenService.getUserId())
 		EntryApiService.postEntry(
 			TokenService.getUserId(),
 			title,
@@ -76,7 +75,7 @@ export default class AddEntry extends Component {
 	validationDuration() {
 		let num = this.state.duration;
 		if(num < 1) {
-			return 'Please enter a number greater than zero'
+			return 'Please choose a number greater than zero'
 		}
 	}
 
@@ -226,6 +225,7 @@ render() {
 						</label>
 						</div>
 					</div>
+					<div className="new-mood-btn-container">
 					<button
 						type="submit"
 						disabled={ titleError || contentError || durationError}
@@ -233,6 +233,7 @@ render() {
 						Submit
 					</button>
 					<button type="reset">Reset</button>
+					</div>
 					</form>
 				</section>
 			</div>
