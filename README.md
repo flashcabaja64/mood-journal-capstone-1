@@ -15,11 +15,11 @@ This app was built using React, Express.js, Postgres, and Node. Testing was done
 ## Screenshots
 Add Entry Page
 
-![Add Entry page image](./src/screenshots/add_page.png "Add Entry page")
+![Add Entry page image](./screenshots/add_page.png "Add Entry page")
 
 Dashboard Page
 
-![Dashboard page image](./src/screenshots/dashboard_page.png "Dashboard page")
+![Dashboard page image](./screenshots/dashboard_page.png "Dashboard page")
 
 Moods Page
 
@@ -27,17 +27,18 @@ Moods Page
 
 Login Page
 
-![Login page image](./src/screenshots/login_page.png "Login page")
+![Login page image](./screenshots/login_page.png "Login page")
 
 Registration Page
 
-![Registration page image](./src/screenshots/register_page.png "Registration page")
+![Registration page image](./screenshots/register_page.png "Registration page")
 
 
 Technologies used
 * React
 * HTML/CSS
 * Javascript
+* Chart.js
 
 To run development(local) server - npm start
 
