@@ -107,6 +107,8 @@ export default class EditForm extends Component {
   }
 
   render() {
+		const { title, content, duration, mood_type } = this.state;
+
     let titleError = this.validateTitle();
     let contentError = this.validateContent();
     let durationError = this.validationDuration();
@@ -133,6 +135,7 @@ export default class EditForm extends Component {
 								onChange={this.onChangeHandle}
 								aria-label="Title of current mood"
 								aria-describedby="moodTitle"
+								value={title}
 								required
 							/>
 						<ValidateError message={titleError} />
@@ -153,6 +156,7 @@ export default class EditForm extends Component {
 								onChange={this.onChangeHandle}
 								aria-label="describe your current mood"
 								aria-describedby="moodContent"
+								value={content}
 								required
 							>
 							</textarea>
@@ -173,6 +177,7 @@ export default class EditForm extends Component {
 								onChange={this.onChangeHandle}
 								aria-label="duration for current mood"
 								aria-describedby="moodTime"
+								value={duration}
 								required
 							/>
 						<ValidateError message={durationError} />
