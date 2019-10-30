@@ -22,8 +22,6 @@ class App extends Component {
     hasError: false,
   };
 
-
-
   render() {
     return (
       <main className='App'>

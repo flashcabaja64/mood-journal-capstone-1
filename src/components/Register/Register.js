@@ -34,7 +34,7 @@ export default class Register extends Component {
 
   validateFullname() {
     let fullName = this.state.full_name.trim();
-    const allLetters = /[a-zA-Z]+\s\D/;
+    const allLetters = /[a-zA-Z]+\D/;
 
 		if (fullName.length === 0) {
 			return 'Input field cannot be empty';
